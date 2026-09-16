@@ -186,7 +186,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   font-size:12.5px; font-weight:600; letter-spacing:.06em;
   color:var(--orange); margin-bottom:14px;
 }
-.eyebrow::before{content:""; width:22px; height:2px; background:var(--orange); display:inline-block;}
 .eyebrow.on-light{color:var(--orange-600);}
 
 .hero h1{
@@ -493,11 +492,18 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);
   border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; margin-top:40px;
 }
-.contact-strip .cell{background:#fff; padding:26px; text-align:center; transition:background-color .2s ease, transform .2s ease;}
+.contact-strip .cell{background:#fff; padding:24px 26px; display:flex; align-items:center; gap:14px; transition:background-color .2s ease, transform .2s ease;}
 .contact-strip .cell:hover{background:var(--bg-soft); transform:translateY(-2px);}
-.contact-strip .cell svg{width:22px;height:22px; stroke:var(--orange-600); margin-bottom:12px;}
-.contact-strip .cell h5{font-size:14.5px; margin-bottom:6px;}
-.contact-strip .cell a, .contact-strip .cell span{font-size:14px; color:var(--body);}
+.contact-strip .cell .cell-icon{
+  width:44px; height:44px; flex-shrink:0; border-radius:10px;
+  background:var(--orange-100); display:flex; align-items:center; justify-content:center;
+}
+.contact-strip .cell .cell-icon svg{width:20px;height:20px; stroke:var(--orange-600);}
+.contact-strip .cell .cell-text{display:flex; flex-direction:column; gap:3px; min-width:0;}
+.contact-strip .cell h5{font-size:13px; margin:0; color:var(--muted); font-weight:600; letter-spacing:.01em;}
+.contact-strip .cell a, .contact-strip .cell span{font-size:15px; color:var(--ink); font-weight:600; word-break:break-word;}
+.contact-strip .cell a{transition:color .18s ease;}
+.contact-strip .cell a:hover{color:var(--orange-600);}
 @media (max-width:760px){ .contact-strip{grid-template-columns:1fr;} }
 
 /* =========================================================
@@ -596,6 +602,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   .cta-banner{padding:36px;}
   .team-grid{gap:22px;}
   .hero-badges{gap:26px;}
+  .hero h1[style*="nowrap"]{white-space:normal !important;}
 }
 
 /* Large phone */
