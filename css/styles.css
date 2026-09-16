@@ -112,16 +112,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   gap:24px;
 }
 .logo{display:flex; align-items:center; gap:10px;}
-.logo svg{width:34px;height:30px;flex-shrink:0;}
-.logo-text{
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:18px;
-  line-height:1.15;
-  color:var(--navy);
-}
-.logo-text .amp{color:var(--orange);}
-.logo-text span{display:block;}
+.logo-img{height:40px; width:auto; display:block;}
+.footer-brand .logo-img{height:34px;}
 
 .nav-links{display:flex; align-items:center; gap:30px;}
 .nav-links a{
