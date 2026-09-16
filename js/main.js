@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initTeamSearch();
   initTeamTabs();
+  initContactForm();
   initScrollReveal();
   initHeaderShadow();
 });
@@ -23,7 +24,25 @@ const initMobileNav = () => {
     toggle.setAttribute('aria-expanded', String(open));
   });
 
+  // Direct links close the mobile menu; dropdown parents toggle an accordion
   links.querySelectorAll('a').forEach((link) => {
+    if (link.closest('.nav-dropdown')) {
+      // links inside a dropdown just close the whole menu on click
+      link.addEventListener('click', () => links.classList.remove('open'));
+    }
+  });
+
+  // On mobile, tapping a dropdown's top-level label toggles its panel
+  links.querySelectorAll('.nav-item > a').forEach((parentLink) => {
+    parentLink.addEventListener('click', (event) => {
+      if (window.innerWidth > 980) return; // desktop uses hover
+      event.preventDefault();
+      parentLink.parentElement.classList.toggle('open');
+    });
+  });
+
+  // Plain top-level links (Inicio, Nuestro Equipo, Contacto) close the menu
+  links.querySelectorAll(':scope > a').forEach((link) => {
     link.addEventListener('click', () => links.classList.remove('open'));
   });
 };
@@ -70,6 +89,33 @@ const initTeamTabs = () => {
       if (teamGridWrap) teamGridWrap.classList.toggle('is-hidden', !isPartners);
       if (tabNote) tabNote.classList.toggle('show', !isPartners);
     });
+  });
+};
+
+// ---------------------------------------------------------
+// Contact form: validation + success message (static site,
+// no backend — shows a confirmation on valid submit).
+// ---------------------------------------------------------
+const initContactForm = () => {
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  if (!form) return;
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (success) success.classList.add('show');
+    form.reset();
+
+    // Hide the confirmation again after a while
+    window.setTimeout(() => {
+      if (success) success.classList.remove('show');
+    }, 8000);
   });
 };
 

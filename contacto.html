@@ -7,7 +7,7 @@
 <meta name="description" content="Contacta a López & Asociados en Bogotá o Medellín. Primera consulta sin costo.">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/styles.css?v=10">
+<link rel="stylesheet" href="css/styles.css?v=11">
 </head>
 <body>
 
@@ -18,10 +18,55 @@
     </a>
     <nav class="nav-links" id="nav-links">
       <a href="index.html">Inicio</a>
-      <a href="index.html#sobre-nosotros">Quiénes somos</a>
-      <a href="servicios.html">Servicios</a>
+
+      <div class="nav-item">
+        <a href="quienes-somos.html">Quiénes somos
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <div class="dd-label">Conozca la firma</div>
+          <a href="quienes-somos.html#la-firma">La Firma</a>
+          <a href="quienes-somos.html#fortalezas">Nuestras Fortalezas</a>
+          <a href="quienes-somos.html#redes">Nuestras Redes</a>
+          <a href="quienes-somos.html#historia">Nuestra Historia</a>
+          <a href="quienes-somos.html#experiencia">Nuestra Experiencia</a>
+          <div class="dd-divider"></div>
+          <div class="dd-label">Nuestro equipo</div>
+          <a href="nuestro-equipo.html">Nuestros Socios</a>
+          <a href="nuestro-equipo.html">Líderes y Coordinadores</a>
+          <a href="nuestro-equipo.html">Responsables de Equipo</a>
+          <a href="nuestro-equipo.html">Nuestros Equipos</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="servicios.html">Servicios
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="servicio-consultoria-laboral.html">Consultoría laboral</a>
+          <a href="servicio-auditorias-diagnostico.html">Auditorías y Diagnóstico</a>
+          <a href="servicio-representacion-judicial.html">Representación judicial y administrativa</a>
+          <a href="servicio-negociacion-colectiva.html">Negociación colectiva</a>
+          <a href="servicio-transformacion-laboral.html">Transformación y entorno laboral</a>
+          <a href="servicio-capacitaciones.html">Capacitaciones</a>
+          <div class="dd-divider"></div>
+          <a href="servicios.html">Ver todos los servicios</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="novedades.html">Novedades Laborales
+          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="novedades.html#tendencias">Tendencias</a>
+          <a href="novedades.html#articulos">Artículos</a>
+          <a href="novedades.html#boletines">Boletines</a>
+        </div>
+      </div>
+
       <a href="nuestro-equipo.html">Nuestro Equipo</a>
-      <a href="index.html#insights">Insights</a>
       <a href="contacto.html" class="active">Contacto</a>
     </nav>
     <div class="nav-cta">
@@ -47,8 +92,82 @@
     </div>
   </section>
 
-  <!-- OFFICES -->
+  <!-- FORMULARIO DE CONTACTO -->
   <section class="section">
+    <div class="container">
+      <div class="contact-form-wrap">
+        <div class="form-aside reveal">
+          <div class="eyebrow on-light">Formulario de contacto</div>
+          <h2>Cuéntenos su caso</h2>
+          <p class="lead-tag">La primera consulta es sin costo.</p>
+          <p>Complete el formulario y un miembro de nuestro equipo se pondrá en contacto con usted a la brevedad. Todos los campos marcados con <span class="req-mark">*</span> son obligatorios.</p>
+          <ul class="about-list">
+            <li><span class="dash"></span>Respuesta ágil de nuestro equipo interdisciplinario</li>
+            <li><span class="dash"></span>Atención en Bogotá y Medellín</li>
+            <li><span class="dash"></span>Confidencialidad y trato profesional</li>
+          </ul>
+        </div>
+
+        <div class="contact-form reveal">
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="cf-nombre">Nombre <span class="req">*</span></label>
+                <input type="text" id="cf-nombre" name="nombre" required autocomplete="given-name">
+              </div>
+              <div class="form-field">
+                <label for="cf-apellido">Apellido <span class="req">*</span></label>
+                <input type="text" id="cf-apellido" name="apellido" required autocomplete="family-name">
+              </div>
+              <div class="form-field">
+                <label for="cf-email">Correo electrónico <span class="req">*</span></label>
+                <input type="email" id="cf-email" name="email" required autocomplete="email">
+              </div>
+              <div class="form-field">
+                <label for="cf-telefono">Teléfono <span class="req">*</span></label>
+                <input type="tel" id="cf-telefono" name="telefono" required autocomplete="tel">
+              </div>
+              <div class="form-field">
+                <label for="cf-empresa">Empresa <span class="req">*</span></label>
+                <input type="text" id="cf-empresa" name="empresa" required autocomplete="organization">
+              </div>
+              <div class="form-field">
+                <label for="cf-asunto">Asunto <span class="req">*</span></label>
+                <select id="cf-asunto" name="asunto" required>
+                  <option value="" selected disabled>Seleccione una opción</option>
+                  <option>Consultoría laboral</option>
+                  <option>Auditorías y Diagnóstico</option>
+                  <option>Representación judicial y administrativa</option>
+                  <option>Negociación colectiva</option>
+                  <option>Transformación y entorno laboral</option>
+                  <option>Capacitaciones</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label for="cf-mensaje">Mensaje <span class="req">*</span></label>
+                <textarea id="cf-mensaje" name="mensaje" required placeholder="Describa brevemente su caso o consulta…"></textarea>
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="cf-politica" name="politica" required>
+              <label for="cf-politica">He leído y acepto la <a href="#politica">Política de tratamiento de datos</a> de López &amp; Asociados. <span class="req">*</span></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            <p class="form-note">Nos comprometemos a proteger sus datos y a no compartirlos con terceros.</p>
+            <div class="form-success" id="form-success" role="status">
+              ✓ ¡Gracias! Hemos recibido su mensaje. Un miembro de nuestro equipo se pondrá en contacto con usted pronto.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICES -->
+  <section class="section soft">
     <div class="container">
       <div class="office-grid">
 
@@ -127,9 +246,9 @@
       <div class="footer-col">
         <h5>Links de interés</h5>
         <ul>
-          <li><a href="index.html#sobre-nosotros">Quiénes somos</a></li>
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
           <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="index.html#insights">Insights</a></li>
+          <li><a href="novedades.html">Novedades laborales</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
@@ -152,6 +271,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=10"></script>
+<script src="js/main.js?v=11"></script>
 </body>
 </html>
