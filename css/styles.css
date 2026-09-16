@@ -383,6 +383,87 @@ a.service-card:hover h3{color:var(--orange-600);}
 .services-grid.on-navy .service-card:hover{background:#262c66;}
 .services-grid.on-navy .service-card:hover .icon{background:var(--orange);}
 
+/* =========================================================
+   Immersive services section (home) — bg image + blue overlay
+   ========================================================= */
+.services-feature{
+  position:relative; border-radius:var(--radius-lg); overflow:hidden;
+  background-image:url('../assets/img/about-office.jpg');
+  background-size:cover; background-position:center;
+  isolation:isolate;
+}
+.services-feature::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(18,22,58,.82), rgba(18,22,58,.90)),
+    linear-gradient(120deg, rgba(24,30,73,.75), rgba(36,43,94,.62));
+}
+.services-feature .sf-head{
+  text-align:center; padding:56px 24px 8px; position:relative; z-index:1;
+}
+.services-feature .sf-head .eyebrow{color:var(--orange); justify-content:center;}
+.services-feature .sf-head h2{color:#fff;}
+.services-feature .sf-head p{color:#c3c6e0; max-width:640px; margin:14px auto 0; font-size:15.5px;}
+
+.sf-grid{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1px; padding:40px; position:relative; z-index:1;
+}
+.sf-card{
+  position:relative; overflow:hidden;
+  padding:30px 26px; border-radius:var(--radius-md);
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+  text-decoration:none; color:inherit; cursor:pointer;
+  transition:transform .28s ease, background-color .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+.sf-card .sf-num{
+  font-family:var(--font-display); font-weight:700;
+  font-size:15px; color:var(--orange); letter-spacing:.02em; margin-bottom:16px;
+  display:block; opacity:.9;
+}
+.sf-card h3{
+  color:#fff; font-size:18px; margin-bottom:10px; transition:color .2s ease;
+}
+.sf-card p{
+  color:#b7bad9; font-size:14px; line-height:1.6; transition:color .2s ease;
+}
+.sf-card .sf-arrow{
+  margin-top:18px; display:inline-flex; align-items:center; gap:8px;
+  color:var(--orange); font-weight:600; font-size:14px;
+  opacity:0; transform:translateY(6px);
+  transition:opacity .28s ease, transform .28s ease;
+}
+.sf-card .sf-arrow svg{width:16px; height:16px;}
+/* Orange sweep that fills on hover */
+.sf-card::after{
+  content:""; position:absolute; left:0; bottom:0; height:3px; width:0;
+  background:var(--orange); transition:width .35s ease;
+}
+.sf-card:hover{
+  background:rgba(242,96,33,.14);
+  border-color:rgba(242,96,33,.55);
+  transform:translateY(-6px);
+  box-shadow:0 24px 44px -20px rgba(0,0,0,.55);
+}
+.sf-card:hover h3{color:var(--orange);}
+.sf-card:hover p{color:#e7e8f5;}
+.sf-card:hover .sf-arrow{opacity:1; transform:translateY(0);}
+.sf-card:hover::after{width:100%;}
+
+.services-feature .see-all{padding:0 40px 44px; margin-top:0;}
+.services-feature .see-all .link-arrow{color:#fff;}
+.services-feature .see-all .link-arrow:hover{color:var(--orange);}
+
+@media (max-width:860px){
+  .sf-grid{grid-template-columns:1fr 1fr; padding:24px;}
+}
+@media (max-width:560px){
+  .sf-grid{grid-template-columns:1fr; padding:18px;}
+  .services-feature .sf-head{padding:40px 20px 4px;}
+  .services-feature .see-all{padding:0 24px 32px;}
+}
+
 /* CTA fill card — occupies the leftover cells in the last row */
 .service-card--cta{
   flex:1 1 620px; max-width:calc(66.666% - 1px);
