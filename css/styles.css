@@ -2,7 +2,7 @@
    López & Asociados — Design System
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
   /* Brand palette, sampled from the firm's brand materials */
@@ -21,7 +21,7 @@
   --bg-soft:#f6f6fb;
   --white:#ffffff;
 
-  --font-display:'Poppins', 'Segoe UI', sans-serif;
+  --font-display:'Jost', 'Segoe UI', sans-serif;
   --font-body:'Inter', 'Segoe UI', sans-serif;
 
   --container:1180px;
@@ -275,24 +275,42 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 }
 
 /* =========================================================
-   Stats strip (light)
+   Stats strip (light) — bold, eye-catching
    ========================================================= */
 .stats-strip{
   border-bottom:1px solid var(--line);
-  padding:36px 0;
+  padding:52px 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(242,96,33,.05), transparent 40%),
+    var(--bg-soft);
 }
 .stats-strip .row{
-  display:flex; flex-wrap:wrap; gap:28px; justify-content:space-between; text-align:left;
+  display:flex; flex-wrap:wrap; gap:0; justify-content:space-between; text-align:left;
 }
-.stats-strip .item{flex:1 1 200px; padding:0 18px; border-left:1px solid var(--line);}
+.stats-strip .item{
+  flex:1 1 220px; padding:8px 28px; border-left:1px solid var(--line);
+  position:relative;
+}
 .stats-strip .item:first-child{border-left:none;}
-.stats-strip .item .top{font-size:12px; color:var(--muted); margin-bottom:6px;}
-.stats-strip .item .bottom{font-size:15px; color:var(--navy); font-weight:600;}
-.stats-strip .item .bottom em{color:var(--orange-600); font-style:normal;}
+.stats-strip .item .top{
+  font-family:var(--font-display); font-weight:700;
+  font-size:clamp(30px,3.4vw,42px); line-height:1.05;
+  color:var(--navy); margin-bottom:8px; letter-spacing:-.01em;
+}
+.stats-strip .item .top em{color:var(--orange-600); font-style:normal;}
+.stats-strip .item .bottom{
+  font-size:14px; color:var(--body); font-weight:500; line-height:1.45;
+}
+.stats-strip .item .bottom b{color:var(--navy); font-weight:700;}
 
 .mini-stats{display:flex; gap:40px; margin-top:30px; flex-wrap:wrap;}
-.mini-stats .stat .num{font-size:28px; color:var(--orange-600); font-weight:700; font-family:var(--font-display);}
+.mini-stats .stat .num{font-size:36px; color:var(--orange-600); font-weight:700; font-family:var(--font-display);}
 .mini-stats .stat .lbl{font-size:12.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:4px;}
+
+@media (max-width:680px){
+  .stats-strip .item{flex-basis:calc(50% - 1px); border-left:none; padding:14px 12px;}
+  .stats-strip .row{gap:12px 0;}
+}
 
 /* =========================================================
    Section basics
