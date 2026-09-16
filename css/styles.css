@@ -279,8 +279,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 /* =========================================================
    Services grid
    ========================================================= */
-.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden;}
-.service-card{background:#fff; padding:30px 26px; position:relative;}
+.services-grid{display:flex; flex-wrap:wrap; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; justify-content:center;}
+.service-card{background:#fff; padding:30px 26px; position:relative; flex:1 1 300px; max-width:calc(33.333% - 1px); min-width:280px;}
 .service-card .num{position:absolute; top:22px; right:24px; font-size:12px; color:var(--muted); font-weight:600;}
 .service-card .icon{
   width:46px; height:46px; border-radius:10px; background:var(--orange-100);
@@ -307,8 +307,20 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 .services-grid.on-navy .service-card:hover{background:#262c66;}
 .services-grid.on-navy .service-card:hover .icon{background:var(--orange);}
 
-@media (max-width:860px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
-@media (max-width:560px){ .services-grid{grid-template-columns:1fr;} }
+/* CTA fill card — occupies the leftover cells in the last row */
+.service-card--cta{
+  flex:1 1 620px; max-width:calc(66.666% - 1px);
+  background:linear-gradient(135deg, var(--orange), var(--orange-600)) !important;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.service-card--cta h3{color:#fff !important; font-size:20px; margin-bottom:10px;}
+.service-card--cta p{color:rgba(255,255,255,.9) !important; max-width:44ch;}
+.service-card--cta .link-arrow{margin-top:18px;}
+.service-card--cta:hover{transform:none; box-shadow:none;}
+@media (max-width:860px){ .service-card--cta{max-width:100%; flex-basis:100%;} }
+
+@media (max-width:860px){ .service-card{max-width:calc(50% - 1px);} }
+@media (max-width:560px){ .service-card{max-width:100%;} }
 
 .see-all{display:flex; justify-content:center; margin-top:40px;}
 
