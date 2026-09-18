@@ -5,23 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Propuesta 1 | López & Asociados</title>
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/propuesta-1.css?v=8">
+<link rel="stylesheet" href="css/propuesta-1.css?v=9">
 </head>
 <body>
 
 <div class="ribbon">Propuesta de diseño 1 · <a href="index.html">Ver sitio actual</a> · <a href="propuesta-2.html">Ver propuesta 2</a></div>
 
-<header class="p-header">
-  <nav class="p-nav">
-    <a href="#top" class="logo"><img src="assets/img/logo-lockup.png" alt="López & Asociados"></a>
-    <div class="links">
-      <a href="#sobre">Quiénes somos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#novedades-link">Novedades</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-    <a href="#contacto" class="cta">Hablemos</a>
-  </nav>
+<header class="p-header" id="site-header">
+  <div class="shell">
+    <nav class="p-nav">
+      <a href="#top" class="logo"><img src="assets/img/logo-lockup.png" alt="López & Asociados"></a>
+      <div class="links">
+        <a href="#sobre">Quiénes somos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#novedades-link">Novedades</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a href="#contacto" class="cta">Hablemos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </nav>
+  </div>
 </header>
 
 <main id="top">
@@ -187,6 +191,12 @@
 
 <footer class="p-foot">
   <div class="container">
+    <div class="brandline">
+      <h3>¿Tiene una situación legal que <span class="accent">resolver</span>?</h3>
+      <a href="#contacto" class="fcta">Solicitar consulta gratuita
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
     <div class="grid">
       <div class="col">
         <div class="logo"><img src="assets/img/logo-lockup-white.png" alt="López & Asociados"></div>
@@ -210,6 +220,27 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((e) => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.up').forEach((el) => io.observe(el));
+
+  // Floating navbar gains depth once scrolled
+  const header = document.getElementById('site-header');
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Stacking cards: a section taller than the viewport must NOT be sticky,
+  // otherwise the following card covers it before the user can read it.
+  const cards = document.querySelectorAll('.card-sec');
+  const measureCards = () => {
+    cards.forEach((c) => {
+      c.classList.remove('is-tall');
+      if (c.offsetHeight > window.innerHeight) c.classList.add('is-tall');
+    });
+  };
+  measureCards();
+  window.addEventListener('resize', measureCards, { passive: true });
+  window.addEventListener('load', measureCards);
 
   // Reveal-footer: main leaves room at the bottom equal to the fixed footer's height
   const main = document.querySelector('main');
