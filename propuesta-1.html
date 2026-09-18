@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Propuesta 1 | López & Asociados</title>
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/propuesta-1.css?v=6">
+<link rel="stylesheet" href="css/propuesta-1.css?v=7">
 </head>
 <body>
 
@@ -210,6 +210,18 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((e) => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.up').forEach((el) => io.observe(el));
+
+  // Reveal-footer: main leaves room at the bottom equal to the fixed footer's height
+  const main = document.querySelector('main');
+  const foot = document.querySelector('.p-foot');
+  const setFooterSpace = () => {
+    if (!main || !foot) return;
+    // only on wider screens; on small screens the effect can feel cramped, but it still works
+    main.style.marginBottom = foot.offsetHeight + 'px';
+  };
+  setFooterSpace();
+  window.addEventListener('resize', setFooterSpace, { passive: true });
+  window.addEventListener('load', setFooterSpace);
 
   const form = document.getElementById('cform');
   const ok = document.getElementById('cok');

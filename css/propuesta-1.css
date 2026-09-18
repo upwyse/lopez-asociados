@@ -27,7 +27,9 @@
 html{scroll-behavior:smooth; font-size:16px;}
 @media (min-width:2200px){ html{font-size:19px;} }
 @media (min-width:3000px){ html{font-size:23px;} }
-body{margin:0; font-family:var(--font-body); color:var(--body); background:var(--white); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+body{margin:0; font-family:var(--font-body); color:var(--body); background:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+/* main sits above the fixed footer and carries a solid bg so the footer stays hidden until the end */
+main{position:relative; z-index:2; background:var(--white);}
 img{max-width:100%; display:block;}
 a{color:inherit; text-decoration:none;}
 ul{margin:0; padding:0; list-style:none;}
@@ -196,8 +198,9 @@ p{margin:0;}
 @media (max-width:900px){ .contact .wrap{grid-template-columns:1fr;} }
 @media (max-width:520px){ .cform .grid{grid-template-columns:1fr;} }
 
-/* Footer */
-.p-foot{padding:80px 0 40px; background:var(--ink); color:rgba(255,255,255,.6);}
+/* Footer — REVEAL effect: fixed at bottom, content slides up to uncover it */
+.p-foot{padding:80px 0 40px; background:var(--ink); color:rgba(255,255,255,.6); position:fixed; left:0; right:0; bottom:0; z-index:0;}
+.reveal-spacer{background:transparent;}
 .p-foot .grid{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:44px;}
 .p-foot .logo img{height:42px; margin-bottom:22px;}
 .p-foot p{font-size:14px; max-width:34ch;}
