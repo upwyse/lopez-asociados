@@ -405,3 +405,25 @@ p{margin:0;}
 .profile .pfacts .f .k{min-width:150px; color:var(--muted); font-weight:600;}
 .profile .pfacts .f .v{color:var(--ink);}
 @media (max-width:860px){ .profile{grid-template-columns:1fr; gap:36px;} }
+
+/* =========================================================
+   HERO — floating stat cards
+   ========================================================= */
+.hero-stats{
+  display:flex; gap:18px; flex-wrap:wrap; margin-top:54px; position:relative; z-index:3;
+}
+.hstat{
+  background:rgba(255,255,255,.10);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.22);
+  padding:22px 28px; min-width:190px;
+  transition:.38s var(--ease);
+  animation:fade-up .9s both;
+}
+.hstat:nth-child(1){animation-delay:.55s;}
+.hstat:nth-child(2){animation-delay:.68s;}
+.hstat:nth-child(3){animation-delay:.81s;}
+.hstat:hover{background:rgba(255,255,255,.18); border-color:rgba(242,96,33,.7); transform:translateY(-6px);}
+.hstat .n{font-family:var(--font-display); font-size:42px; font-weight:600; color:var(--orange); line-height:1; letter-spacing:-.02em;}
+.hstat .l{font-size:13.5px; color:rgba(255,255,255,.82); margin-top:8px; line-height:1.4;}
+@media (max-width:900px){ .hero-stats{gap:12px; margin-top:38px;} .hstat{min-width:150px; padding:18px 20px; flex:1 1 150px;} .hstat .n{font-size:32px;} }
