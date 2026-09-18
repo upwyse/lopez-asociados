@@ -29,7 +29,23 @@ html{scroll-behavior:smooth; font-size:16px;}
 @media (min-width:3000px){ html{font-size:23px;} }
 body{margin:0; font-family:var(--font-body); color:var(--body); background:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
 /* main sits above the fixed footer and carries a solid bg so the footer stays hidden until the end */
-main{position:relative; z-index:2; background:var(--white);}
+main{position:relative; z-index:2; background:transparent;}
+
+/* =========================================================
+   STACKING CARDS — each section rounds its top corners and
+   sticks, so sections stack over each other like cards on scroll
+   ========================================================= */
+.card-sec{
+  position:sticky; top:0;
+  border-radius:28px 28px 0 0;
+  overflow:hidden;
+  box-shadow:0 -18px 40px -24px rgba(20,24,52,.28);
+}
+/* each card needs its own solid background so the one beneath is hidden until it slides away */
+.card-sec.bg-cream{background:var(--cream);}
+.card-sec.bg-white{background:var(--white);}
+.card-sec.bg-navy{background:var(--navy);}
+@media (max-width:700px){ .card-sec{border-radius:20px 20px 0 0;} }
 img{max-width:100%; display:block;}
 a{color:inherit; text-decoration:none;}
 ul{margin:0; padding:0; list-style:none;}
