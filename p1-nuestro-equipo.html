@@ -6,7 +6,7 @@
 <title>Nuestro Equipo | López &amp; Asociados</title>
 <meta name="description" content="Conoce a los socios de López & Asociados, profesionales comprometidos con la tranquilidad legal de tu empresa.">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/propuesta-1.css?v=10">
+<link rel="stylesheet" href="css/propuesta-1.css?v=11">
 </head>
 <body>
 
@@ -19,7 +19,6 @@
         <a href="propuesta-1.html#servicios">Servicios</a>
         <a href="p1-novedades.html">Novedades</a>
         <a href="p1-nuestro-equipo.html">Equipo</a>
-        <a href="propuesta-1.html#contacto">Contacto</a>
       </div>
       <a href="propuesta-1.html#contacto" class="cta">Hablemos
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -46,33 +45,52 @@
         <h2>Liderando con experiencia y <span class="accent">compromiso</span></h2>
         <p>Acompañamos a nuestros clientes en la definición de la estrategia en la atención de procesos judiciales, audiencias, y diligencias, así como en la vigilancia de los procesos laborales en las diferentes instancias de la jurisdicción laboral y contencioso administrativa en Colombia.</p>
       </div>
-      <div class="team-grid up">
-        <div class="tcard">
+      <div class="team-tools up">
+        <div class="tsearch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="tsearch" placeholder="Buscar por nombre o especialidad…" aria-label="Buscar en el equipo">
+        </div>
+        <div class="tfilters" id="tfilters">
+          <button class="active" data-cat="all">Todos</button>
+          <button data-cat="socios">Nuestros socios</button>
+          <button data-cat="lideres">Líderes y coordinadores</button>
+          <button data-cat="responsables">Responsables de equipo</button>
+          <button data-cat="equipo">Nuestros equipos</button>
+        </div>
+      </div>
+      <div class="team-grid up" id="tgrid">
+        <a class="tcard" href="p1-perfil-angelica-carrion.html" data-cat="socios" data-name="Angélica María Carrión Barrero Directora General Socia Dirección estratégica consultoría">
           <div class="photo"><img src="assets/img/team-1-angelica.jpg" alt="Angélica María Carrión Barrero"></div>
           <h4>Angélica María Carrión Barrero</h4>
           <p class="role">Directora General – Socia</p>
-        </div>
-        <div class="tcard">
+          <span class="area-tag">Dirección General</span>
+        </a>
+        <a class="tcard" href="p1-perfil-alejandro-castellanos.html" data-cat="socios" data-name="Alejandro Miguel Castellanos López Director Litigios Representación Judicial Socio">
           <div class="photo"><img src="assets/img/team-2-alejandro.jpg" alt="Alejandro Miguel Castellanos López"></div>
           <h4>Alejandro Miguel Castellanos López</h4>
           <p class="role">Director del Área de Litigios y Representación Judicial – Socio</p>
-        </div>
-        <div class="tcard">
+          <span class="area-tag">Litigios</span>
+        </a>
+        <a class="tcard" href="p1-perfil-rocio-lagos.html" data-cat="socios" data-name="Rocío Lagos Prieto Directora Relacionamiento Laboral Socia negociación colectiva sindical">
           <div class="photo"><img src="assets/img/team-3-rocio.jpg" alt="Rocío Lagos Prieto"></div>
           <h4>Rocío Lagos Prieto</h4>
           <p class="role">Directora de Relacionamiento Laboral – Socia</p>
-        </div>
-        <div class="tcard">
+          <span class="area-tag">Relacionamiento Laboral</span>
+        </a>
+        <a class="tcard" href="p1-perfil-juan-pablo-lopez.html" data-cat="socios" data-name="Juan Pablo López Moreno Director General Unidad Conocimiento Laboral UCL Socio">
           <div class="photo"><img src="assets/img/team-4-juanpablo.jpg" alt="Juan Pablo López Moreno"></div>
           <h4>Juan Pablo López Moreno</h4>
           <p class="role">Director General – Unidad de Conocimiento Laboral (UCL) – Socio</p>
-        </div>
-        <div class="tcard">
+          <span class="area-tag">Conocimiento Laboral</span>
+        </a>
+        <a class="tcard" href="p1-perfil-ana-maria-rubiano.html" data-cat="socios" data-name="Ana María Rubiano Delgado Directora Consultoría Socia seguridad social migratoria">
           <div class="photo"><img src="assets/img/team-5-anamaria.jpg" alt="Ana María Rubiano Delgado"></div>
           <h4>Ana María Rubiano Delgado</h4>
           <p class="role">Directora de Consultoría – Socia</p>
-        </div>
+          <span class="area-tag">Consultoría</span>
+        </a>
       </div>
+      <p class="tempty" id="tempty">No encontramos resultados para esa búsqueda. Intente con otro nombre o especialidad.</p>
     </div>
   </section>
 
@@ -172,6 +190,36 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
     window.setTimeout(() => ok && ok.classList.remove('show'), 8000);
   });
+
+  // Team search + category filter
+  const ts = document.getElementById('tsearch');
+  const tg = document.getElementById('tgrid');
+  const tempty = document.getElementById('tempty');
+  const tfil = document.getElementById('tfilters');
+  if (tg) {
+    let cat = 'all';
+    const apply = () => {
+      const q = (ts ? ts.value : '').trim().toLowerCase();
+      let visible = 0;
+      tg.querySelectorAll('.tcard').forEach((card) => {
+        const okCat = cat === 'all' || card.dataset.cat === cat;
+        const okQ = !q || (card.dataset.name || '').toLowerCase().includes(q);
+        const show = okCat && okQ;
+        card.classList.toggle('hide', !show);
+        if (show) visible++;
+      });
+      if (tempty) tempty.classList.toggle('show', visible === 0);
+    };
+    if (ts) ts.addEventListener('input', apply);
+    if (tfil) tfil.querySelectorAll('button').forEach((b) => {
+      b.addEventListener('click', () => {
+        tfil.querySelectorAll('button').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        cat = b.dataset.cat;
+        apply();
+      });
+    });
+  }
 });
 </script>
 </body>
