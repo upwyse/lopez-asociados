@@ -20,12 +20,13 @@ const initFigures = () => {
   if (!box) return;
 
   const figs = [...box.querySelectorAll('.fig')];
-  const dots = [...box.querySelectorAll('.dots button')];
+  const dots = [...box.querySelectorAll('.bars button')];
   if (figs.length < 2) return;
 
   let index = 0;
   let timer = null;
   const DELAY = 4200;
+  box.style.setProperty('--delay', DELAY + 'ms');
 
   const show = (next) => {
     const target = (next + figs.length) % figs.length;
@@ -38,16 +39,27 @@ const initFigures = () => {
 
     index = target;
     figs[index].classList.add('on');
-    dots.forEach((d, i) => d.setAttribute('aria-current', String(i === index)));
+    dots.forEach((d, i) => {
+      d.setAttribute('aria-current', String(i === index));
+      if (i === index) {
+        // reinicia la animación de la barra
+        const bar = d;
+        bar.style.animation = 'none';
+        void bar.offsetWidth;
+        bar.style.animation = '';
+      }
+    });
   };
 
   const stop = () => {
     if (timer) window.clearInterval(timer);
     timer = null;
+    box.classList.add('paused');   // congela la barra de avance
   };
 
   const play = () => {
-    stop();
+    if (timer) window.clearInterval(timer);
+    box.classList.remove('paused');
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     timer = window.setInterval(() => show(index + 1), DELAY);
   };
