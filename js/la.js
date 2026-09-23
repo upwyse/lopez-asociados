@@ -12,49 +12,24 @@ document.addEventListener('DOMContentLoaded', () => {
   initForm();
 });
 
-/* Mosaico: las columnas se desplazan a distinta velocidad con el scroll */
+/* El mosaico se mueve solo por CSS (bucle continuo).
+   Aquí solo se detiene cuando la sección no está en pantalla,
+   para no gastar batería ni CPU de más. */
 const initMosaic = () => {
   const mosaic = document.getElementById('mosaic');
-  if (!mosaic) return;
+  if (!mosaic || !('IntersectionObserver' in window)) return;
 
-  const cols = [...mosaic.querySelectorAll('.mos-col')];
-  if (!cols.length) return;
+  const tracks = mosaic.querySelectorAll('.track');
+  if (!tracks.length) return;
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  let ticking = false;
-
-  const update = () => {
-    const rect = mosaic.getBoundingClientRect();
-    // Progreso de la sección respecto a la ventana: -1 (abajo) .. 1 (arriba)
-    const progress = (window.innerHeight / 2 - (rect.top + rect.height / 2)) / window.innerHeight;
-
-    cols.forEach((col) => {
-      const speed = parseFloat(col.dataset.speed) || 0;
-      // Cuánto puede moverse sin dejar huecos
-      const room = Math.max(col.scrollHeight - mosaic.clientHeight, 0);
-      const shift = progress * speed * room;
-      col.style.transform = `translate3d(0, ${shift.toFixed(1)}px, 0)`;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const state = entry.isIntersecting ? 'running' : 'paused';
+      tracks.forEach((t) => { t.style.animationPlayState = state; });
     });
+  }, { threshold: 0 });
 
-    ticking = false;
-  };
-
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(update);
-  };
-
-  // Punto de partida: cada columna arranca desplazada para que se vea escalonada
-  cols.forEach((col) => {
-    const room = Math.max(col.scrollHeight - mosaic.clientHeight, 0);
-    col.style.transform = `translate3d(0, ${(-room / 2).toFixed(1)}px, 0)`;
-  });
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  onScroll();
+  io.observe(mosaic);
 };
 
 /* Galería de servicios: flechas que desplazan de tarjeta en tarjeta */
