@@ -3,7 +3,7 @@
    Serif elegante + bold · geometría del logo · luminosa
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root{
   --navy:#181e49;
@@ -17,8 +17,8 @@
   --line:#e9e8ee;
   --cream:#f7f4ee;
   --white:#ffffff;
-  --font-display:'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-  --font-body:'Inter', sans-serif;
+  --font-display:'Source Serif 4', Georgia, serif;
+  --font-body:'Roboto', 'Helvetica Neue', Arial, sans-serif;
   --container:1280px;
   --ease:cubic-bezier(.19,1,.22,1);
 }
@@ -124,7 +124,7 @@ p{margin:0;}
 .p-hero .eyebrow{display:inline-flex; align-items:center; gap:0; font-family:var(--font-body); font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--orange); font-weight:700; margin-bottom:26px;}
 
 .p-hero h1{font-size:clamp(44px,6.4vw,88px); font-weight:600; letter-spacing:-.025em; color:#fff; line-height:1.0; max-width:16ch;}
-.p-hero h1 .accent{color:var(--orange); font-weight:800;}
+.p-hero h1 .accent{color:var(--orange); font-weight:700;}
 .p-hero .sub{max-width:52ch; margin-top:30px; font-size:18px; color:rgba(255,255,255,.82);}
 .p-hero .actions{display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;}
 .p-hero .actions .btn-solid{opacity:0; animation:fade-up .8s .5s forwards;}
@@ -161,7 +161,7 @@ p{margin:0;}
 .sec-head.center{margin-inline:auto; text-align:center;}
 .sec-head .klabel{margin-bottom:24px;}
 .sec-head h2{font-size:clamp(34px,4.6vw,64px); font-weight:600; letter-spacing:-.02em; line-height:1.02;}
-.sec-head h2 .accent{color:var(--orange); font-weight:800;}
+.sec-head h2 .accent{color:var(--orange); font-weight:700;}
 .sec-head p{margin-top:20px; font-size:17px;}
 
 .areas{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
@@ -435,7 +435,7 @@ p{margin:0;}
 /* --- Propósito: 3 características con icono --- */
 .purpose{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
 .purpose .ptext h2{font-size:clamp(28px,3.6vw,46px); font-weight:700; letter-spacing:-.025em; line-height:1.14;}
-.purpose .ptext h2 .accent{color:var(--orange); font-weight:800;}
+.purpose .ptext h2 .accent{color:var(--orange); font-weight:700;}
 .purpose .ptext .lead{margin-top:22px; font-size:17px; max-width:56ch;}
 .pfeatures{display:flex; flex-direction:column; gap:0;}
 .pfeat{display:flex; gap:22px; align-items:flex-start; padding:26px 0; border-bottom:1px solid var(--line);}
@@ -474,7 +474,7 @@ p{margin:0;}
 /* --- Bloque de declaración con video --- */
 .statement{display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center;}
 .statement h2{font-size:clamp(26px,3.4vw,42px); font-weight:700; letter-spacing:-.025em; line-height:1.2;}
-.statement h2 .brand{color:var(--orange); font-weight:800;}
+.statement h2 .brand{color:var(--orange); font-weight:700;}
 .statement p{margin-top:24px; font-size:17px; max-width:58ch;}
 .statement p strong{color:var(--ink); font-weight:700;}
 .statement .sbtn{margin-top:32px;}
@@ -520,3 +520,66 @@ p{margin:0;}
 
 /* --- Contadores animados del hero --- */
 .hstat .n[data-count]{font-variant-numeric:tabular-nums;}
+
+/* =========================================================
+   SERVICIOS — tarjetas con descripción (estilo referencia)
+   ========================================================= */
+.svc-cards{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:44px; border-top:1px solid var(--line);}
+.scard{
+  padding:30px 26px 30px 0; border-bottom:1px solid var(--line); border-right:1px solid var(--line);
+  text-decoration:none; color:inherit; display:flex; flex-direction:column;
+  transition:background-color .35s var(--ease), padding-left .35s var(--ease);
+  padding-left:0;
+}
+.scard:nth-child(4n){border-right:none;}
+.scard:hover{background:var(--cream); padding-left:18px;}
+.scard .snum{font-family:var(--font-display); font-size:13px; font-weight:700; color:var(--orange); letter-spacing:.06em; margin-bottom:14px;}
+.scard h3{font-size:19px; font-weight:600; letter-spacing:-.01em; margin-bottom:10px; transition:color .3s;}
+.scard:hover h3{color:var(--orange-600);}
+.scard p{font-size:14px; color:var(--body); line-height:1.6; margin-bottom:16px;}
+.scard .sgo{margin-top:auto; font-size:13.5px; font-weight:600; color:var(--orange-600); display:inline-flex; align-items:center; gap:7px; opacity:0; transform:translateX(-6px); transition:.3s var(--ease);}
+.scard:hover .sgo{opacity:1; transform:translateX(0);}
+@media (max-width:1000px){ .svc-cards{grid-template-columns:1fr 1fr;} .scard:nth-child(4n){border-right:1px solid var(--line);} .scard:nth-child(2n){border-right:none;} }
+@media (max-width:600px){ .svc-cards{grid-template-columns:1fr;} .scard{border-right:none !important; padding-right:0;} }
+
+/* =========================================================
+   HERO estilo editorial (referencia Marval): claro, sobrio,
+   declaración grande con mucho aire
+   ========================================================= */
+.hero-editorial{
+  background:var(--white); position:relative; overflow:hidden;
+  padding:110px 0 90px;
+}
+.hero-editorial::after{
+  content:""; position:absolute; right:0; top:0; width:34%; height:100%;
+  background:var(--cream); clip-path:polygon(22% 0, 100% 0, 100% 100%, 0 100%); z-index:0;
+}
+.hero-editorial .container{position:relative; z-index:2;}
+.hero-editorial .he-top{display:flex; align-items:baseline; gap:18px; margin-bottom:38px;}
+.hero-editorial .he-top .klabel{margin:0;}
+.hero-editorial .he-rule{flex:1; height:1px; background:var(--line);}
+.hero-editorial h1{
+  font-size:clamp(30px,3.9vw,56px); font-weight:400; letter-spacing:-.02em;
+  line-height:1.24; color:var(--ink); max-width:24ch;
+}
+.hero-editorial h1 .accent{color:var(--orange); font-weight:700;}
+.hero-editorial .he-sub{
+  margin-top:34px; font-size:17.5px; color:var(--body); max-width:56ch; line-height:1.8;
+}
+.hero-editorial .actions{display:flex; gap:16px; margin-top:44px; flex-wrap:wrap;}
+.hero-editorial .hero-stats{margin-top:70px; padding-top:40px; border-top:1px solid var(--line); gap:0; display:grid; grid-template-columns:repeat(3,1fr);}
+.hero-editorial .hstat{
+  background:transparent; backdrop-filter:none; border:none; border-right:1px solid var(--line);
+  padding:0 30px 0 0; min-width:0; animation:none; opacity:1;
+}
+.hero-editorial .hstat:last-child{border-right:none;}
+.hero-editorial .hstat:hover{background:transparent; transform:none; border-color:var(--line);}
+.hero-editorial .hstat .n{color:var(--orange); font-size:clamp(34px,4vw,50px); font-weight:700;}
+.hero-editorial .hstat .l{color:var(--body); font-size:14px; margin-top:8px;}
+@media (max-width:760px){
+  .hero-editorial{padding:70px 0 60px;}
+  .hero-editorial::after{display:none;}
+  .hero-editorial .hero-stats{grid-template-columns:1fr; gap:24px;}
+  .hero-editorial .hstat{border-right:none; border-bottom:1px solid var(--line); padding:0 0 20px;}
+  .hero-editorial .hstat:last-child{border-bottom:none;}
+}
