@@ -167,39 +167,64 @@ h1,h2,h3,h4{
 }
 .hero .cta-row{display:flex; gap:14px; margin-top:38px; flex-wrap:wrap;}
 
-/* Cifras al pie del hero */
-.hero-figures{
-  display:flex; gap:0; margin-top:64px; padding-top:30px;
-  border-top:1px solid rgba(255,255,255,.22); flex-wrap:wrap;
+/* Cifras del hero: tarjeta flotante que desliza de una a la siguiente */
+.hero .wrap{position:relative;}
+.figures{
+  position:absolute; right:0; bottom:0; z-index:3;
+  width:min(330px, 42vw);
+  background:rgba(12,16,38,.55);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--iso-curve);
+  padding:26px 28px 22px;
+  overflow:hidden;
+  box-shadow:0 26px 60px -30px rgba(0,0,0,.8);
 }
-.hero-figures .fig{padding-right:48px; margin-right:48px; border-right:1px solid rgba(255,255,255,.18);}
-.hero-figures .fig:last-child{border-right:none; margin-right:0; padding-right:0;}
-.hero-figures .fig b{
-  display:block; font-family:var(--serif); font-size:clamp(28px,3vw,40px);
-  color:#fff; font-weight:600; line-height:1;
+.figures .viewport{position:relative; height:104px;}
+.figures .fig{
+  position:absolute; inset:0;
+  opacity:0; transform:translateY(22px);
+  transition:opacity .6s var(--ease), transform .6s var(--ease);
+  pointer-events:none;
 }
-.hero-figures .fig span{display:block; color:rgba(255,255,255,.7); font-size:14px; margin-top:8px;}
-@media (max-width:720px){
-  .hero-figures{display:grid; grid-template-columns:repeat(3,1fr); gap:0;}
-  .hero-figures .fig{padding:0 14px; margin:0; border-right:1px solid rgba(255,255,255,.18);}
-  .hero-figures .fig:first-child{padding-left:0;}
-  .hero-figures .fig b{font-size:24px;}
-  .hero-figures .fig span{font-size:11.5px; line-height:1.35;}
+.figures .fig.on{opacity:1; transform:translateY(0); pointer-events:auto;}
+.figures .fig.out{opacity:0; transform:translateY(-22px);}
+.figures .fig b{
+  display:block; font-family:var(--serif); font-size:clamp(38px,4.2vw,52px);
+  color:#fff; font-weight:600; line-height:1; letter-spacing:-.02em;
+}
+.figures .fig span{
+  display:block; color:rgba(255,255,255,.78); font-size:14.5px;
+  margin-top:10px; line-height:1.45;
+}
+/* Indicadores */
+.figures .dots{display:flex; gap:7px; margin-top:18px;}
+.figures .dots button{
+  width:22px; height:3px; padding:0; border:0; cursor:pointer;
+  background:rgba(255,255,255,.28); transition:background-color .35s var(--ease);
+}
+.figures .dots button[aria-current="true"]{background:var(--orange);}
+
+@media (max-width:900px){
+  .figures{
+    position:static; width:100%; margin-top:40px;
+    padding:22px 24px 18px;
+  }
+  .figures .viewport{height:92px;}
 }
 @media (max-width:420px){
-  .hero-figures .fig{padding:0 9px;}
-  .hero-figures .fig b{font-size:21px;}
-  .hero-figures .fig span{font-size:10.5px;}
+  .figures .fig b{font-size:34px;}
+  .figures .fig span{font-size:13.5px;}
 }
 
 /* Entrada del hero: un solo momento orquestado */
-.hero h1, .hero .lede, .hero .cta-row, .hero-figures{
+.hero h1, .hero .lede, .hero .cta-row, .figures{
   opacity:0; transform:translateY(24px);
   animation:rise .95s var(--ease) forwards;
 }
 .hero .lede{animation-delay:.14s;}
 .hero .cta-row{animation-delay:.26s;}
-.hero-figures{animation-delay:.38s;}
+.figures{animation-delay:.38s;}
 @keyframes rise{to{opacity:1; transform:translateY(0);}}
 
 /* ---------------------------------------------------------
@@ -590,7 +615,9 @@ form .btn{margin-top:24px;}
 /* Desplazamiento continuo: el contenido va duplicado, así el bucle no salta */
 .mos-col .track{display:flex; flex-direction:column; gap:16px; animation:mos-up var(--dur,42s) linear infinite;}
 .mos-col.down .track{animation-name:mos-down;}
-.mosaic:hover .track{animation-play-state:paused;}
+.mosaic:hover .track,
+.mosaic:focus-within .track,
+.mosaic.is-off .track{animation-play-state:paused;}
 
 @keyframes mos-up{
   from{transform:translate3d(0,0,0);}
@@ -621,9 +648,9 @@ form .btn{margin-top:24px;}
     linear-gradient(0deg, rgba(24,30,73,.42), rgba(24,30,73,.42));
   transition:background .5s var(--ease);
 }
-.mos-item span{
-  position:absolute; left:20px; right:16px; bottom:16px; z-index:2;
-  color:#fff; font-size:16px; font-weight:500; line-height:1.3;
+.mos-item .lbl span{
+  position:static; color:#fff; font-size:16px; font-weight:500; line-height:1.3;
+  text-shadow:0 1px 10px rgba(0,0,0,.45);
 }
 .mos-item:hover img{filter:grayscale(0) brightness(.95) contrast(1); transform:scale(1.06);}
 .mos-item:hover::after{
@@ -647,3 +674,71 @@ form .btn{margin-top:24px;}
   .mos-item.h-tall{height:230px;} .mos-item.h-mid{height:200px;}
 }
 
+
+/* ---------------------------------------------------------
+   Más movimiento al pasar el mouse
+   --------------------------------------------------------- */
+
+/* Mosaico: la tarjeta se levanta, el nombre sube y entra una flecha */
+.mos-item{
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.mos-item .lbl{
+  position:absolute; left:20px; right:16px; bottom:16px; z-index:2;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.mos-item .lbl .arw{
+  width:32px; height:32px; flex-shrink:0;
+  border:1.5px solid rgba(255,255,255,.55); border-radius:var(--iso-curve-sm);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform:translateX(-8px) rotate(-12deg);
+  transition:opacity .4s var(--ease), transform .45s var(--ease), background-color .3s, border-color .3s;
+}
+.mos-item .lbl .arw svg{width:15px; height:15px; stroke:#fff;}
+.mos-item:hover{transform:translateY(-8px); box-shadow:0 30px 50px -26px rgba(0,0,0,.75);}
+.mos-item:hover span{transform:translateY(-2px);}
+.mos-item span{transition:transform .45s var(--ease);}
+.mos-item:hover .lbl .arw{
+  opacity:1; transform:translateX(0) rotate(0deg);
+  background:var(--orange); border-color:var(--orange);
+}
+/* Filo naranja que se dibuja en la base */
+.mos-item::before{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:3px; z-index:3;
+  background:var(--orange); transform:scaleX(0); transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.mos-item:hover::before{transform:scaleX(1);}
+
+/* Equipo: la foto se acerca y aparece una línea bajo el nombre */
+.person h3{position:relative; display:inline-block;}
+.person h3::after{
+  content:""; position:absolute; left:0; bottom:-3px; height:1.5px; width:0;
+  background:var(--orange); transition:width .4s var(--ease);
+}
+.person:hover h3::after{width:100%;}
+.person .shot{transition:transform .45s var(--ease), box-shadow .45s var(--ease);}
+.person:hover .shot{transform:translateY(-6px); box-shadow:0 26px 44px -28px rgba(18,22,46,.6);}
+
+/* Novedades: la tarjeta se inclina levemente hacia el cursor */
+.post{transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s;}
+.post:hover .txt h3{color:var(--orange-700); transition:color .3s;}
+
+/* Reconocimientos: el sello crece un poco y entra el filo naranja */
+.award{position:relative;}
+.award::after{
+  content:""; position:absolute; left:0; top:0; width:100%; height:3px;
+  background:var(--orange); transform:scaleX(0); transform-origin:left;
+  transition:transform .45s var(--ease);
+}
+.award:hover::after{transform:scaleX(1);}
+.award .logo img{transition:transform .45s var(--ease);}
+.award:hover .logo img{transform:scale(1.07);}
+
+/* Pilares: el icono gira suavemente */
+.pillar .mark{transition:background-color .3s var(--ease), transform .45s var(--ease);}
+.pillar:hover .mark{transform:rotate(-6deg) scale(1.06);}
+
+/* Botones: la flecha interna avanza */
+.btn svg{transition:transform .3s var(--ease);}
+.btn:hover svg{transform:translateX(4px);}

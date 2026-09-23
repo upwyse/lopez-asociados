@@ -6,11 +6,64 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileNav();
   initReveal();
+  initFigures();
   initGallery();
   initMosaic();
   initPeopleFilter();
   initForm();
 });
+
+/* Cifras del hero: pasan solas de una a la siguiente,
+   y también al pulsar los indicadores. */
+const initFigures = () => {
+  const box = document.getElementById('figures');
+  if (!box) return;
+
+  const figs = [...box.querySelectorAll('.fig')];
+  const dots = [...box.querySelectorAll('.dots button')];
+  if (figs.length < 2) return;
+
+  let index = 0;
+  let timer = null;
+  const DELAY = 4200;
+
+  const show = (next) => {
+    const target = (next + figs.length) % figs.length;
+    if (target === index) return;
+
+    const current = figs[index];
+    current.classList.remove('on');
+    current.classList.add('out');
+    window.setTimeout(() => current.classList.remove('out'), 600);
+
+    index = target;
+    figs[index].classList.add('on');
+    dots.forEach((d, i) => d.setAttribute('aria-current', String(i === index)));
+  };
+
+  const stop = () => {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  };
+
+  const play = () => {
+    stop();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = window.setInterval(() => show(index + 1), DELAY);
+  };
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { show(i); play(); });
+  });
+
+  // Se detiene mientras el visitante lo mira de cerca
+  box.addEventListener('mouseenter', stop);
+  box.addEventListener('mouseleave', play);
+  box.addEventListener('focusin', stop);
+  box.addEventListener('focusout', play);
+
+  play();
+};
 
 /* El mosaico se mueve solo por CSS (bucle continuo).
    Aquí solo se detiene cuando la sección no está en pantalla,
@@ -19,13 +72,11 @@ const initMosaic = () => {
   const mosaic = document.getElementById('mosaic');
   if (!mosaic || !('IntersectionObserver' in window)) return;
 
-  const tracks = mosaic.querySelectorAll('.track');
-  if (!tracks.length) return;
-
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      const state = entry.isIntersecting ? 'running' : 'paused';
-      tracks.forEach((t) => { t.style.animationPlayState = state; });
+      // Se usa una clase (no estilo en línea) para que la pausa al pasar
+      // el mouse siga funcionando desde el CSS.
+      mosaic.classList.toggle('is-off', !entry.isIntersecting);
     });
   }, { threshold: 0 });
 
