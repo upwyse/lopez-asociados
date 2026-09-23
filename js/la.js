@@ -6,9 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileNav();
   initReveal();
+  initGallery();
   initPeopleFilter();
   initForm();
 });
+
+/* Galería de servicios: flechas que desplazan de tarjeta en tarjeta */
+const initGallery = () => {
+  const gallery = document.getElementById('gallery');
+  const prev = document.getElementById('gal-prev');
+  const next = document.getElementById('gal-next');
+  if (!gallery || !prev || !next) return;
+
+  const step = () => {
+    const card = gallery.querySelector('.g-item');
+    if (!card) return gallery.clientWidth * 0.8;
+    const gap = parseFloat(getComputedStyle(gallery).gap) || 20;
+    return card.getBoundingClientRect().width + gap;
+  };
+
+  const sync = () => {
+    const max = gallery.scrollWidth - gallery.clientWidth - 2;
+    prev.disabled = gallery.scrollLeft <= 2;
+    next.disabled = gallery.scrollLeft >= max;
+  };
+
+  prev.addEventListener('click', () => gallery.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => gallery.scrollBy({ left: step(), behavior: 'smooth' }));
+  gallery.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync, { passive: true });
+  sync();
+};
 
 /* Cabecera: fondo sólido al salir del hero (o siempre si no hay hero) */
 const initHeader = () => {
