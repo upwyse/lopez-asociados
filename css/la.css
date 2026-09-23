@@ -540,3 +540,77 @@ form .btn{margin-top:24px;}
 .gallery.grid-all .g-item{flex:initial; width:100%; height:440px;}
 @media (max-width:980px){ .gallery.grid-all{grid-template-columns:1fr 1fr;} }
 @media (max-width:620px){ .gallery.grid-all{grid-template-columns:1fr;} .gallery.grid-all .g-item{height:380px;} }
+
+/* ---------------------------------------------------------
+   Mosaico de servicios — columnas que se desplazan al hacer
+   scroll, imágenes en blanco y negro con etiqueta
+   --------------------------------------------------------- */
+.mosaic-band{
+  background:#141414; color:#fff; position:relative; overflow:hidden;
+  padding:0;
+}
+.mosaic-band .inner{
+  display:grid; grid-template-columns:1.25fr .75fr; gap:0; align-items:center;
+  min-height:100svh;
+}
+
+/* Columnas de imágenes */
+.mosaic{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+  padding:0 14px; height:100svh; overflow:hidden;
+  mask-image:linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+}
+.mos-col{display:flex; flex-direction:column; gap:14px; will-change:transform;}
+
+.mos-item{
+  position:relative; overflow:hidden; display:block; flex-shrink:0;
+  background:#1d1d1d;
+}
+.mos-item img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  filter:grayscale(1) contrast(1.06) brightness(.82);
+  transition:filter .5s var(--ease), transform 1.1s var(--ease);
+}
+.mos-item::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.05) 45%, rgba(0,0,0,.78) 100%);
+}
+.mos-item span{
+  position:absolute; left:20px; bottom:16px; z-index:2;
+  color:#fff; font-size:16px; font-weight:400; line-height:1.3;
+  max-width:82%; text-shadow:0 1px 10px rgba(0,0,0,.5);
+}
+.mos-item:hover img{filter:grayscale(0) contrast(1) brightness(.95); transform:scale(1.05);}
+
+/* Alturas alternadas para el efecto de mosaico */
+.mos-item.h-tall{height:clamp(320px,46svh,460px);}
+.mos-item.h-mid{height:clamp(260px,38svh,380px);}
+
+/* Bloque de título a la derecha */
+.mosaic-say{padding:0 56px 0 40px;}
+.mosaic-say .tag{
+  display:inline-flex; align-items:center; gap:11px;
+  font-size:13px; letter-spacing:.2em; color:#fff; margin-bottom:22px;
+}
+.mosaic-say .tag::before{content:""; width:9px; height:9px; background:var(--orange);}
+.mosaic-say h2{
+  color:#fff; font-size:clamp(28px,3.4vw,48px); font-weight:400;
+  line-height:1.2; letter-spacing:-.015em; max-width:14ch;
+}
+.mosaic-say h2 em{font-style:normal; color:var(--orange);}
+.mosaic-say p{margin-top:22px; color:rgba(255,255,255,.65); font-size:16px; max-width:40ch;}
+.mosaic-say .btn{margin-top:30px;}
+
+@media (max-width:1000px){
+  .mosaic-band .inner{grid-template-columns:1fr; min-height:0;}
+  .mosaic{height:62svh; order:2; padding:0 14px 40px;}
+  .mosaic-say{order:1; padding:64px 24px 34px;}
+  .mosaic-say h2{max-width:20ch;}
+}
+@media (max-width:620px){
+  .mosaic{grid-template-columns:repeat(2,1fr); height:auto; mask-image:none; -webkit-mask-image:none;}
+  .mos-col{margin-top:0 !important; transform:none !important;}
+  .mos-item span{font-size:14px; left:14px; bottom:12px;}
+  .mos-item.h-tall{height:240px;} .mos-item.h-mid{height:240px;}
+}
