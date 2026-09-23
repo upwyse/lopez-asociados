@@ -335,7 +335,7 @@ h1,h2,h3,h4{
 }
 .g-item::after{
   content:""; position:absolute; inset:0; z-index:1;
-  background:linear-gradient(180deg, rgba(10,13,32,0) 38%, rgba(10,13,32,.90) 100%);
+  background:linear-gradient(180deg, rgba(12,16,38,.06) 30%, rgba(12,16,38,.90) 100%);
   transition:background .45s var(--ease);
 }
 .g-item .cap{
@@ -677,22 +677,26 @@ form .btn{margin-top:24px;}
 }
 .mos-item img{
   width:100%; height:100%; object-fit:cover; display:block;
-  filter:brightness(.88) contrast(1.04) saturate(.9);
+  filter:grayscale(1) brightness(.72) contrast(1.05);
   transition:filter .55s var(--ease), transform 1.1s var(--ease);
 }
 /* Velo navy de marca sobre las fotos */
 .mos-item::after{
   content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(10,13,32,0) 45%, rgba(10,13,32,.88) 100%);
+  background:
+    linear-gradient(180deg, rgba(12,16,38,.30) 40%, rgba(12,16,38,.92) 100%),
+    linear-gradient(0deg, rgba(24,30,73,.42), rgba(24,30,73,.42));
   transition:background .5s var(--ease);
 }
 .mos-item .lbl span{
   position:static; color:#fff; font-size:16px; font-weight:500; line-height:1.3;
   text-shadow:0 1px 10px rgba(0,0,0,.45);
 }
-.mos-item:hover img{filter:brightness(1.05) contrast(1.06) saturate(1.05); transform:scale(1.06);}
+.mos-item:hover img{filter:grayscale(0) brightness(.95) contrast(1); transform:scale(1.06);}
 .mos-item:hover::after{
-  background:linear-gradient(180deg, rgba(242,96,33,.14) 0%, rgba(10,13,32,.86) 100%);
+  background:
+    linear-gradient(180deg, rgba(242,96,33,.18) 0%, rgba(12,16,38,.90) 100%),
+    linear-gradient(0deg, rgba(24,30,73,.10), rgba(24,30,73,.10));
 }
 
 .mos-item.h-tall{height:clamp(300px,40svh,400px);}
