@@ -242,8 +242,10 @@ const initPeopleFilter = () => {
 
   const search = document.getElementById('finder');
   const chips = document.getElementById('chips');
+  const chipsService = document.getElementById('chipsService');
   const empty = document.getElementById('nomatch');
   let area = 'all';
+  let service = 'all';
 
   const apply = () => {
     const q = (search ? search.value : '').trim().toLowerCase();
@@ -251,9 +253,11 @@ const initPeopleFilter = () => {
 
     grid.querySelectorAll('.person').forEach((card) => {
       const areas = (card.dataset.area || '').split(' ');
+      const services = (card.dataset.service || '').split(' ');
       const matchArea = area === 'all' || areas.includes(area);
+      const matchService = service === 'all' || services.includes(service);
       const matchText = !q || (card.dataset.search || '').toLowerCase().includes(q);
-      const show = matchArea && matchText;
+      const show = matchArea && matchService && matchText;
       card.classList.toggle('hidden', !show);
       if (show) shown += 1;
     });
@@ -269,6 +273,17 @@ const initPeopleFilter = () => {
         chips.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', 'false'));
         btn.setAttribute('aria-pressed', 'true');
         area = btn.dataset.area;
+        apply();
+      });
+    });
+  }
+
+  if (chipsService) {
+    chipsService.querySelectorAll('button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        chipsService.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        service = btn.dataset.service;
         apply();
       });
     });

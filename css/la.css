@@ -628,6 +628,18 @@ h1,h2,h3,h4{
 .no-match{display:none; padding:24px 0; color:var(--slate-400);}
 .no-match.show{display:block;}
 
+/* Segunda fila: filtro por servicio, más discreta y con acento naranja */
+.filter-row{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  margin:-18px 0 38px; padding-top:18px; border-top:1px dashed var(--line);
+}
+.filter-label{font-size:13px; font-weight:700; letter-spacing:.04em; color:var(--slate-400); flex-shrink:0;}
+.chips.chips-sm button{
+  font-size:12.5px; padding:7px 14px; border-color:var(--line);
+}
+.chips.chips-sm button[aria-pressed="true"]{background:var(--orange); border-color:var(--orange);}
+.chips.chips-sm button:hover{border-color:var(--orange-700);}
+
 /* ---------------------------------------------------------
    Contacto
    --------------------------------------------------------- */
@@ -1035,4 +1047,14 @@ form .btn{margin-top:24px;}
   .team-intro{grid-template-columns:1fr; gap:20px;}
   .person .who h3{font-size:19px;}
   .person .who .role{font-size:13.5px;}
+}
+
+/* Variante grande del carrusel de servicios: tarjetas y títulos más
+   grandes, para que las 6 quepan en una sola fila con flechas */
+.gallery.gallery-lg .g-item{flex:0 0 380px; height:500px;}
+.gallery.gallery-lg .cap h3{font-size:26px; line-height:1.2;}
+.gallery.gallery-lg .cap p{font-size:15.5px;}
+@media (max-width:640px){
+  .gallery.gallery-lg .g-item{flex:0 0 280px; height:400px;}
+  .gallery.gallery-lg .cap h3{font-size:21px;}
 }

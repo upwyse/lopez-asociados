@@ -6,7 +6,7 @@
 <title>Equipo | López &amp; Asociados</title>
 <meta name="description" content="Conozca a los socios de López & Asociados.">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/la.css?v=30">
+<link rel="stylesheet" href="css/la.css?v=32">
 </head>
 <body>
 
@@ -52,13 +52,25 @@
           <button data-area="responsables" aria-pressed="false">Responsables de equipo</button>
         </div>
       </div>
+      <div class="filter-row">
+        <span class="filter-label">Filtrar por servicio:</span>
+        <div class="chips chips-sm" id="chipsService">
+          <button data-service="all" aria-pressed="true">Todos</button>
+          <button data-service="consultoria" aria-pressed="false">Consultoría laboral</button>
+          <button data-service="auditorias" aria-pressed="false">Auditorías y Diagnóstico</button>
+          <button data-service="representacion" aria-pressed="false">Representación judicial</button>
+          <button data-service="negociacion" aria-pressed="false">Negociación colectiva</button>
+          <button data-service="transformacion" aria-pressed="false">Transformación laboral</button>
+          <button data-service="capacitaciones" aria-pressed="false">Capacitaciones</button>
+        </div>
+      </div>
 
       <div class="team-intro">
         <p class="count">05<em>SOCIOS</em></p>
         <p style="max-width:44ch;">Cada socio dirige un área de la firma y acompaña directamente a las organizaciones en sus decisiones laborales de mayor impacto.</p>
       </div>
       <div class="people" id="people">
-        <a class="person" href="la-perfil-angelica.html" data-area="socios" data-search="Angélica María Carrión Barrero Directora General – Socia Dirección General">
+        <a class="person" href="la-perfil-angelica.html" data-area="socios" data-service="consultoria transformacion" data-search="Angélica María Carrión Barrero Directora General – Socia Dirección General">
           <div class="shot">
             <img src="assets/img/team-1-angelica.jpg" alt="Angélica María Carrión Barrero">
             <span class="zone">Dirección General</span>
@@ -69,7 +81,7 @@
             </div>
           </div>
         </a>
-        <a class="person" href="la-perfil-alejandro.html" data-area="socios" data-search="Alejandro Miguel Castellanos López Director del Área de Litigios y Representación Judicial – Socio Litigios">
+        <a class="person" href="la-perfil-alejandro.html" data-area="socios" data-service="representacion" data-search="Alejandro Miguel Castellanos López Director del Área de Litigios y Representación Judicial – Socio Litigios">
           <div class="shot">
             <img src="assets/img/team-2-alejandro.jpg" alt="Alejandro Miguel Castellanos López">
             <span class="zone">Litigios</span>
@@ -80,7 +92,7 @@
             </div>
           </div>
         </a>
-        <a class="person" href="la-perfil-rocio.html" data-area="socios" data-search="Rocío Lagos Prieto Directora de Relacionamiento Laboral – Socia Relacionamiento">
+        <a class="person" href="la-perfil-rocio.html" data-area="socios" data-service="negociacion" data-search="Rocío Lagos Prieto Directora de Relacionamiento Laboral – Socia Relacionamiento">
           <div class="shot">
             <img src="assets/img/team-3-rocio.jpg" alt="Rocío Lagos Prieto">
             <span class="zone">Relacionamiento</span>
@@ -91,7 +103,7 @@
             </div>
           </div>
         </a>
-        <a class="person" href="la-perfil-juanpablo.html" data-area="socios" data-search="Juan Pablo López Moreno Director General – Unidad de Conocimiento Laboral (UCL) – Socio Conocimiento Laboral">
+        <a class="person" href="la-perfil-juanpablo.html" data-area="socios" data-service="capacitaciones transformacion" data-search="Juan Pablo López Moreno Director General – Unidad de Conocimiento Laboral (UCL) – Socio Conocimiento Laboral">
           <div class="shot">
             <img src="assets/img/team-4-juanpablo.jpg" alt="Juan Pablo López Moreno">
             <span class="zone">Conocimiento Laboral</span>
@@ -102,7 +114,7 @@
             </div>
           </div>
         </a>
-        <a class="person" href="la-perfil-anamaria.html" data-area="socios" data-search="Ana María Rubiano Delgado Directora de Consultoría – Socia Consultoría">
+        <a class="person" href="la-perfil-anamaria.html" data-area="socios" data-service="consultoria auditorias" data-search="Ana María Rubiano Delgado Directora de Consultoría – Socia Consultoría">
           <div class="shot">
             <img src="assets/img/team-5-anamaria.jpg" alt="Ana María Rubiano Delgado">
             <span class="zone">Consultoría</span>
@@ -156,6 +168,6 @@
   </div>
 </footer>
 
-<script src="js/la.js?v=16"></script>
+<script src="js/la.js?v=17"></script>
 </body>
 </html>
