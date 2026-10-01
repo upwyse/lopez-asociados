@@ -362,36 +362,75 @@ h1,h2,h3,h4{
 .intro .say .btn.btn-outline:hover{background:#fff; color:var(--ink); border-color:#fff;}
 
 .pillars{
-  background:#fff; padding:56px 52px; position:relative;
-  display:flex; flex-direction:column; justify-content:center;
+  background:#fff; padding:56px 48px 56px 64px; position:relative;
+  display:flex; flex-direction:column; justify-content:center; gap:6px;
+  overflow:hidden;
+}
+/* Línea de tiempo que conecta los tres pasos */
+.pillars::before{
+  content:""; position:absolute; left:36px; top:78px; bottom:78px; width:2px;
+  background:linear-gradient(180deg, var(--orange-050) 0%, var(--orange) 50%, var(--orange-050) 100%);
+  opacity:.55;
 }
 .pillar{
-  position:relative; display:flex; gap:24px; align-items:flex-start; padding:26px 0;
+  position:relative; display:flex; gap:26px; align-items:center; padding:22px 20px 22px 0;
+  border-radius:var(--iso-curve-sm);
+  transition:transform .4s var(--ease), background-color .4s var(--ease);
 }
-.pillar:not(:last-child){border-bottom:1px solid var(--line);}
+/* Zigzag sutil: cada paso se desplaza un poco para romper la rigidez de la lista */
+.pillar:nth-child(2){transform:translateX(14px);}
+.pillar:nth-child(3){transform:translateX(28px);}
+.pillar:hover{background:var(--paper); transform:translateX(8px) scale(1.015);}
+.pillar:nth-child(2):hover{transform:translateX(22px) scale(1.015);}
+.pillar:nth-child(3):hover{transform:translateX(36px) scale(1.015);}
+
+/* Gran número fantasma detrás del texto */
+.pillar .ghost{
+  position:absolute; right:14px; top:50%; transform:translateY(-50%);
+  font-family:var(--serif); font-size:64px; font-weight:700; color:var(--paper);
+  z-index:0; line-height:1; pointer-events:none; transition:color .4s var(--ease);
+}
+.pillar:hover .ghost{color:var(--orange-050);}
+
+/* Punto sobre la línea de tiempo + badge del ícono */
 .pillar .mark{
-  width:56px; height:56px; flex-shrink:0; background:var(--orange-050);
-  border-radius:50%;
+  position:relative; z-index:1; flex-shrink:0;
+  width:64px; height:64px; border-radius:50%;
+  background:linear-gradient(145deg, #fff, var(--orange-050));
+  border:2px solid #fff;
+  box-shadow:0 10px 24px -12px rgba(242,96,33,.35), 0 0 0 3px var(--paper);
   display:flex; align-items:center; justify-content:center;
-  transition:background-color .35s var(--ease), transform .35s var(--ease);
+  transition:background .4s var(--ease), transform .45s var(--ease), box-shadow .4s var(--ease);
 }
-.pillar .mark svg{width:24px; height:24px; stroke:var(--orange-700); transition:stroke .3s;}
-.pillar .ptxt{padding-top:6px;}
-.pillar .ptxt .num{
-  display:block; font-family:var(--serif); font-size:13px; font-weight:700;
-  color:var(--orange); letter-spacing:.14em; margin-bottom:6px;
+.pillar .mark svg{width:26px; height:26px; stroke:var(--orange-700); transition:stroke .3s;}
+.pillar:hover .mark{
+  background:linear-gradient(145deg, var(--orange), var(--orange-700));
+  transform:rotate(-8deg) scale(1.1);
+  box-shadow:0 14px 30px -10px rgba(242,96,33,.55), 0 0 0 3px var(--paper);
 }
-.pillar h3{font-size:18.5px; font-family:var(--sans); font-weight:600; color:var(--ink); line-height:1.4;}
-.pillar:hover .mark{background:var(--orange); transform:scale(1.08);}
 .pillar:hover .mark svg{stroke:#fff;}
+
+.pillar .ptxt{position:relative; z-index:1; padding-top:2px;}
+.pillar .ptxt .num{
+  display:block; font-family:var(--serif); font-size:12.5px; font-weight:700;
+  color:var(--orange); letter-spacing:.18em; margin-bottom:7px;
+}
+.pillar h3{font-size:18px; font-family:var(--sans); font-weight:600; color:var(--ink); line-height:1.42; max-width:30ch;}
+
 @media (max-width:900px){
   .intro{grid-template-columns:1fr;}
   .intro .say{padding:52px 32px;}
-  .pillars{padding:44px 32px;}
+  .pillars{padding:44px 24px 44px 40px;}
+  .pillars::before{left:24px;}
+  .pillar:nth-child(2),.pillar:nth-child(3),
+  .pillar:nth-child(2):hover,.pillar:nth-child(3):hover{transform:none;}
+  .pillar:hover{transform:translateX(6px) scale(1.01);}
+  .pillar .ghost{display:none;}
 }
 @media (max-width:540px){
   .intro .say{padding:44px 24px;}
-  .pillars{padding:36px 24px;}
+  .pillars{padding:36px 20px 36px 32px;}
+  .pillar .mark{width:52px; height:52px;}
 }
 
 /* ---------------------------------------------------------
@@ -488,34 +527,54 @@ h1,h2,h3,h4{
    --------------------------------------------------------- */
 .awards{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
 .award{
-  position:relative; padding:0 0 32px; background:transparent;
-  transition:transform .4s var(--ease);
+  position:relative; padding:38px 30px 34px; background:#fff;
+  border-radius:var(--iso-curve); overflow:hidden;
+  box-shadow:0 20px 44px -30px rgba(18,22,46,.22);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
 }
-.award .logo{
-  position:relative; height:150px; display:flex; align-items:center; justify-content:center;
-  background:#fff; border-radius:var(--iso-curve); margin-bottom:28px;
-  box-shadow:0 26px 46px -26px rgba(0,0,0,.5);
-  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
-}
-.award .logo img{max-height:84px; max-width:72%; width:auto;}
-.award .logo::after{
-  content:""; position:absolute; left:0; top:0; width:100%; height:4px;
-  background:var(--orange); transform:scaleX(0); transform-origin:left;
-  transition:transform .45s var(--ease); border-radius:var(--iso-curve-sm) var(--iso-curve-sm) 0 0;
-}
+/* Alterna la altura para que la fila respire y se sienta dinámica */
+.award:nth-child(even){transform:translateY(22px);}
 .award:hover{transform:translateY(-10px);}
-.award:hover .logo{box-shadow:0 34px 58px -24px rgba(242,96,33,.3), 0 26px 46px -26px rgba(0,0,0,.55);}
-.award:hover .logo::after{transform:scaleX(1);}
-.award:hover .logo img{transform:scale(1.06);}
-.award .tier{
-  display:inline-block; background:rgba(242,96,33,.16); color:var(--orange);
-  font-size:12px; font-weight:700; letter-spacing:.08em;
-  padding:6px 14px; border-radius:var(--iso-curve-sm); margin-bottom:14px;
+.award:nth-child(even):hover{transform:translateY(12px);}
+
+.award .rank{
+  position:absolute; top:22px; right:26px; z-index:2;
+  font-family:var(--serif); font-size:13px; font-weight:700; color:var(--line);
+  transition:color .35s var(--ease);
 }
-.award h3{font-size:19px; font-family:var(--sans); font-weight:700; color:#fff; margin-bottom:10px; letter-spacing:-.01em;}
-.award p{font-size:14px; line-height:1.65; color:rgba(255,255,255,.62);}
-@media (max-width:900px){ .awards{grid-template-columns:1fr 1fr; gap:36px 24px;} }
-@media (max-width:540px){ .awards{grid-template-columns:1fr;} }
+.award:hover .rank{color:var(--orange);}
+
+.award .logo{
+  position:relative; height:184px; display:flex; align-items:center; justify-content:center;
+  background:var(--paper); border-radius:var(--iso-curve-sm); margin-bottom:24px;
+  transition:background-color .4s var(--ease);
+}
+.award .logo img{max-height:118px; max-width:76%; width:auto; transition:transform .5s var(--ease);}
+.award:hover .logo{background:var(--orange-050);}
+.award:hover .logo img{transform:scale(1.07);}
+/* Filo que se dibuja bajo la placa del logo al pasar el mouse */
+.award .logo::after{
+  content:""; position:absolute; left:50%; bottom:-1px; width:0; height:3px;
+  background:var(--orange); transform:translateX(-50%); transition:width .45s var(--ease);
+}
+.award:hover .logo::after{width:60%;}
+
+.award .tier{
+  display:inline-block; background:var(--navy-950); color:#fff;
+  font-size:11.5px; font-weight:700; letter-spacing:.09em;
+  padding:6px 14px; border-radius:var(--iso-curve-sm); margin-bottom:16px;
+  transition:background-color .35s var(--ease);
+}
+.award:hover .tier{background:var(--navy);}
+.award h3{font-size:21px; font-family:var(--serif); font-weight:700; color:var(--navy-950); margin-bottom:10px; letter-spacing:-.01em;}
+.award p{font-size:14px; line-height:1.65; color:var(--slate);}
+
+@media (max-width:900px){
+  .awards{grid-template-columns:1fr 1fr; gap:46px 22px;}
+  .award:nth-child(even){transform:none;}
+  .award:hover{transform:translateY(-8px);}
+}
+@media (max-width:540px){ .awards{grid-template-columns:1fr; gap:28px;} }
 
 /* ---------------------------------------------------------
    Equipo
