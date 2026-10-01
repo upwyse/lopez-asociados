@@ -276,6 +276,41 @@ h1,h2,h3,h4{
 .band.dark h2,.band.dark h3{color:#fff;}
 @media (max-width:760px){ .band{padding:72px 0;} }
 
+/* ---------------------------------------------------------
+   Isotipo de marca como fondo decorativo — secciones navy
+   --------------------------------------------------------- */
+.claim-band,
+.awards-band{position:relative; overflow:hidden;}
+.claim-band::before,
+.awards-band::before{
+  content:""; position:absolute; z-index:0; pointer-events:none;
+  width:720px; height:720px;
+  background:url('../assets/img/brand/isotipo-white.png') center/contain no-repeat;
+  opacity:.07;
+}
+/* Declaración: el isotipo asoma por la esquina inferior izquierda,
+   detrás del texto, como una filigrana */
+.claim-band::before{
+  left:-180px; bottom:-200px; transform:rotate(-8deg);
+}
+/* Reconocimientos: el isotipo asoma arriba a la derecha, equilibrando
+   la composición de las placas */
+.awards-band::before{
+  right:-200px; top:-220px; transform:rotate(14deg);
+}
+.claim-band .wrap,
+.awards-band .wrap{position:relative; z-index:1;}
+@media (max-width:900px){
+  .claim-band::before,
+  .awards-band::before{width:420px; height:420px;}
+  .claim-band::before{left:-120px; bottom:-140px;}
+  .awards-band::before{right:-130px; top:-150px;}
+}
+@media (max-width:540px){
+  .claim-band::before,
+  .awards-band::before{opacity:.04;}
+}
+
 .lead-in{max-width:760px; margin-bottom:56px;}
 .lead-in h2{font-size:clamp(28px,3.5vw,46px);}
 .lead-in p{margin-top:20px; font-size:17.5px; max-width:64ch;}
