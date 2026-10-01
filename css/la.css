@@ -218,64 +218,47 @@ h1,h2,h3,h4{
 
 /* Cifras del hero: tarjeta flotante, con borde vivo y barra de avance */
 .hero .wrap{position:relative;}
+/* Frases sueltas, sin tarjeta: solo el número y el texto flotando
+   directamente sobre la imagen, con una línea de avance discreta debajo */
 .figures{
-  position:absolute; right:0; bottom:0; z-index:3;
-  width:min(370px, 46vw);
-  border-radius:var(--iso-curve);
-  padding:2px;                      /* deja ver el borde degradado */
-  background:linear-gradient(140deg, rgba(242,96,33,.9), rgba(255,255,255,.12) 42%, rgba(242,96,33,.45));
-  box-shadow:0 34px 70px -28px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.05);
-  animation:fig-float 7s ease-in-out infinite;
-}
-.figures .card{
-  border-radius:calc(var(--iso-curve) - 1px);
-  background:linear-gradient(160deg, rgba(18,23,58,.92), rgba(9,12,30,.94));
-  backdrop-filter:blur(18px);
-  padding:28px 30px 24px;
-  position:relative; overflow:hidden;
-}
-/* Resplandor que acompaña al cambio de cifra */
-.figures .card::before{
-  content:""; position:absolute; top:-40%; right:-30%;
-  width:75%; height:120%; pointer-events:none;
-  background:radial-gradient(circle, rgba(242,96,33,.34), transparent 68%);
-  filter:blur(6px);
+  position:absolute; right:0; bottom:76px; z-index:3;
+  width:min(340px, 44vw); text-align:right;
+  padding:0;
 }
 .figures .eyebrow-mini{
-  position:relative; z-index:1;
-  display:flex; align-items:center; gap:9px; margin-bottom:16px;
-  font-size:11.5px; letter-spacing:.22em; color:rgba(255,255,255,.62);
+  display:flex; align-items:center; justify-content:flex-end; gap:9px; margin-bottom:14px;
+  font-size:11.5px; letter-spacing:.22em; color:rgba(255,255,255,.7);
+  text-shadow:0 2px 14px rgba(0,0,0,.45);
 }
-.figures .eyebrow-mini::before{
+.figures .eyebrow-mini::after{
   content:""; width:8px; height:8px; background:var(--orange);
-  border-radius:var(--iso-curve-sm);
+  border-radius:var(--iso-curve-sm); flex-shrink:0;
 }
 
-.figures .viewport{position:relative; height:118px; z-index:1;}
+.figures .viewport{position:relative; height:112px;}
 .figures .fig{
-  position:absolute; inset:0;
-  opacity:0; transform:translateY(26px) scale(.97);
-  transition:opacity .55s var(--ease), transform .65s var(--ease);
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-end;
+  opacity:0; transform:translateY(22px);
+  transition:opacity .55s var(--ease), transform .6s var(--ease);
   pointer-events:none;
 }
-.figures .fig.on{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
-.figures .fig.out{opacity:0; transform:translateY(-26px) scale(.97);}
+.figures .fig.on{opacity:1; transform:translateY(0); pointer-events:auto;}
+.figures .fig.out{opacity:0; transform:translateY(-22px);}
 .figures .fig b{
-  display:block; font-family:var(--serif); font-size:clamp(44px,4.8vw,62px);
-  color:#fff; font-weight:600; line-height:1; letter-spacing:-.03em;
-  background:linear-gradient(180deg,#fff 40%, rgba(255,255,255,.72));
-  -webkit-background-clip:text; background-clip:text;
+  display:block; font-family:var(--serif); font-size:clamp(46px,5vw,66px);
+  color:#fff; font-weight:700; line-height:1; letter-spacing:-.03em;
+  text-shadow:0 6px 28px rgba(0,0,0,.5);
 }
 .figures .fig span{
-  display:block; color:rgba(255,255,255,.74); font-size:15px;
-  margin-top:12px; line-height:1.45;
+  display:block; color:rgba(255,255,255,.82); font-size:15px;
+  margin-top:10px; line-height:1.4; text-shadow:0 2px 12px rgba(0,0,0,.5);
 }
 
-/* Barra de avance: muestra cuánto falta para la siguiente cifra */
-.figures .bars{display:flex; gap:8px; margin-top:20px; position:relative; z-index:1;}
+/* Barra de avance: discreta, sin caja detrás */
+.figures .bars{display:flex; gap:8px; margin-top:18px; justify-content:flex-end;}
 .figures .bars button{
-  flex:1; height:3px; padding:0; border:0; cursor:pointer;
-  background:rgba(255,255,255,.18); position:relative; overflow:hidden;
+  width:26px; height:3px; padding:0; border:0; cursor:pointer;
+  background:rgba(255,255,255,.3); position:relative; overflow:hidden;
 }
 .figures .bars button::after{
   content:""; position:absolute; inset:0; background:var(--orange);
@@ -287,22 +270,20 @@ h1,h2,h3,h4{
 .figures.paused .bars button[aria-current="true"]::after{animation-play-state:paused;}
 
 @keyframes fig-progress{from{transform:scaleX(0);} to{transform:scaleX(1);}}
-@keyframes fig-float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
-}
 @media (prefers-reduced-motion: reduce){
-  .figures{animation:none;}
   .figures .bars button[aria-current="true"]::after{animation:none; transform:scaleX(1);}
 }
 
 @media (max-width:900px){
-  .figures{position:static; width:100%; margin-top:40px; animation:none;}
-  .figures .card{padding:24px 26px 20px;}
-  .figures .viewport{height:104px;}
+  .figures{position:static; width:100%; margin-top:40px; text-align:left;}
+  .figures .eyebrow-mini{justify-content:flex-start;}
+  .figures .eyebrow-mini::after{order:-1;}
+  .figures .fig{align-items:flex-start;}
+  .figures .bars{justify-content:flex-start;}
+  .figures .viewport{height:100px;}
 }
 @media (max-width:420px){
-  .figures .fig b{font-size:38px;}
+  .figures .fig b{font-size:40px;}
   .figures .fig span{font-size:14px;}
 }
 
@@ -328,35 +309,19 @@ h1,h2,h3,h4{
 /* ---------------------------------------------------------
    Isotipo de marca como fondo decorativo — secciones navy
    --------------------------------------------------------- */
-.claim-band,
 .awards-band{position:relative; overflow:hidden;}
-.claim-band::before,
 .awards-band::before{
   content:""; position:absolute; z-index:0; pointer-events:none;
   width:720px; height:720px;
   background:url('../assets/img/brand/isotipo-white.png') center/contain no-repeat;
   opacity:.07;
-}
-/* Declaración: el isotipo asoma por la esquina inferior izquierda,
-   detrás del texto, como una filigrana */
-.claim-band::before{
-  left:-180px; bottom:-200px; transform:rotate(-8deg);
-}
-/* Reconocimientos: el isotipo asoma arriba a la derecha, equilibrando
-   la composición de las placas */
-.awards-band::before{
   right:-200px; top:-220px; transform:rotate(14deg);
 }
-.claim-band .wrap,
 .awards-band .wrap{position:relative; z-index:1;}
 @media (max-width:900px){
-  .claim-band::before,
-  .awards-band::before{width:420px; height:420px;}
-  .claim-band::before{left:-120px; bottom:-140px;}
-  .awards-band::before{right:-130px; top:-150px;}
+  .awards-band::before{width:420px; height:420px; right:-130px; top:-150px;}
 }
 @media (max-width:540px){
-  .claim-band::before,
   .awards-band::before{opacity:.04;}
 }
 
@@ -563,9 +528,9 @@ h1,h2,h3,h4{
 /* La sección lleva la foto de la escalera de fondo, con un velo azul
    de marca que deja el texto perfectamente legible */
 .band.dark.claim-band{
-  position:relative; background:var(--navy-950);
+  position:relative; background:var(--navy-950); overflow:hidden;
   background-image:
-    linear-gradient(100deg, rgba(10,13,32,.94) 0%, rgba(24,30,73,.86) 48%, rgba(24,30,73,.58) 100%),
+    linear-gradient(100deg, rgba(10,13,32,.97) 0%, rgba(24,30,73,.95) 48%, rgba(24,30,73,.88) 100%),
     url('../assets/img/office/staircase.jpg');
   background-size:cover; background-position:center 20%;
 }
@@ -630,15 +595,15 @@ h1,h2,h3,h4{
 /* ---------------------------------------------------------
    Equipo
    --------------------------------------------------------- */
-.people{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+.people{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
 .person{display:block;}
-.person .shot{overflow:hidden; border-radius:var(--iso-curve); aspect-ratio:3/3.6; background:var(--paper); margin-bottom:16px;}
+.person .shot{overflow:hidden; border-radius:var(--iso-curve); aspect-ratio:3/3.4; background:var(--paper); margin-bottom:16px;}
 .person .shot img{width:100%; height:100%; object-fit:cover; transition:transform 1.1s var(--ease);}
 .person:hover .shot img{transform:scale(1.05);}
 .person h3{font-size:18px; margin-bottom:4px; transition:color .25s;}
 .person:hover h3{color:var(--orange-700);}
 .person .role{font-size:14px; color:var(--slate);}
-@media (max-width:900px){ .people{grid-template-columns:1fr 1fr;} }
+@media (max-width:1000px){ .people{grid-template-columns:repeat(2,1fr);} }
 @media (max-width:560px){ .people{grid-template-columns:1fr;} }
 
 /* Buscador y filtros del equipo */
@@ -1006,58 +971,68 @@ form .btn{margin-top:24px;}
 }
 .team-intro .count em{font-style:normal; color:var(--orange); display:block; font-size:.28em; letter-spacing:.14em; margin-top:12px;}
 
-/* Tarjeta de persona con más presencia */
-.person{position:relative;}
-.person .shot{
+/* Tarjeta de persona: llamativa, mas compacta para que quepan 4 por fila */
+.person{
   position:relative; border-radius:var(--iso-curve); overflow:hidden;
-  aspect-ratio:3/3.6; background:var(--paper);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
 }
-.person .shot img{
-  /* A color siempre; al pasar el mouse solo se acerca un poco */
-  transition:transform .8s var(--ease);
+.person:hover{transform:translateY(-8px); box-shadow:0 26px 46px -26px rgba(18,22,46,.45);}
+/* Filo superior que se dibuja al pasar el mouse */
+.person::before{
+  content:""; position:absolute; left:0; top:0; width:100%; height:4px; z-index:3;
+  background:var(--orange); transform:scaleX(0); transform-origin:left;
+  transition:transform .45s var(--ease);
 }
-.person:hover .shot img{transform:scale(1.045);}
-/* Velo navy, algo más ligero ahora que la foto va a color en reposo */
+.person:hover::before{transform:scaleX(1);}
+
+.person .shot{
+  position:relative; border-radius:0; overflow:hidden;
+  aspect-ratio:3/3.4; background:var(--paper);
+}
+.person .shot img{transition:transform .8s var(--ease);}
+.person:hover .shot img{transform:scale(1.08);}
 .person .shot::after{
   content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(24,30,73,.04) 46%, rgba(12,16,38,.82) 100%);
+  background:linear-gradient(180deg, rgba(24,30,73,.05) 44%, rgba(12,16,38,.85) 100%);
   transition:background .5s var(--ease);
 }
 .person:hover .shot::after{
-  background:linear-gradient(180deg, rgba(242,96,33,.08) 0%, rgba(12,16,38,.86) 100%);
+  background:linear-gradient(180deg, rgba(242,96,33,.1) 0%, rgba(12,16,38,.9) 100%);
 }
 /* Área, sobre la foto */
 .person .zone{
-  position:absolute; left:18px; top:18px; z-index:2;
-  font-size:12px; letter-spacing:.14em; font-weight:700; color:#fff;
+  position:absolute; left:14px; top:14px; z-index:2;
+  font-size:10.5px; letter-spacing:.12em; font-weight:700; color:#fff;
   background:rgba(12,16,38,.6); backdrop-filter:blur(6px);
   border:1px solid rgba(255,255,255,.2);
-  padding:7px 13px; border-radius:var(--iso-curve-sm);
+  padding:5px 10px; border-radius:var(--iso-curve-sm);
   opacity:0; transform:translateY(-6px); transition:.4s var(--ease);
 }
 .person:hover .zone{opacity:1; transform:translateY(0);}
-/* Nombre y cargo sobre la imagen — mucho más grandes y presentes */
+/* Nombre y cargo sobre la imagen, ajustados al ancho más angosto */
 .person .who{
-  position:absolute; left:0; right:0; bottom:0; z-index:2; padding:26px 22px 24px;
+  position:absolute; left:0; right:0; bottom:0; z-index:2; padding:18px 16px 16px;
 }
 .person .who h3{
-  font-family:var(--serif); color:#fff; font-size:25px; font-weight:700;
-  margin-bottom:8px; line-height:1.18; letter-spacing:-.01em;
-  text-shadow:0 2px 16px rgba(0,0,0,.4);
+  font-family:var(--serif); color:#fff; font-size:17.5px; font-weight:700;
+  margin-bottom:5px; line-height:1.2; letter-spacing:-.01em;
+  text-shadow:0 2px 14px rgba(0,0,0,.45);
 }
 .person .who h3::after{background:var(--orange);}
 .person .who .role{
-  color:rgba(255,255,255,.88); font-size:15px; font-weight:500; line-height:1.4;
+  color:rgba(255,255,255,.88); font-size:12.5px; font-weight:500; line-height:1.35;
 }
 .person .who .go{
-  display:inline-flex; align-items:center; gap:8px; margin-top:14px;
-  color:var(--orange); font-size:14px; font-weight:700;
+  display:inline-flex; align-items:center; gap:6px; margin-top:10px;
+  color:var(--orange); font-size:12.5px; font-weight:700;
   max-height:0; opacity:0; overflow:hidden;
   transition:max-height .45s var(--ease), opacity .4s var(--ease), margin .45s var(--ease);
 }
-.person:hover .who .go{max-height:30px; opacity:1;}
-.person .who .go svg{width:16px; height:16px; stroke:var(--orange);}
+.person:hover .who .go{max-height:26px; opacity:1;}
+.person .who .go svg{width:14px; height:14px; stroke:var(--orange);}
 
 @media (max-width:760px){
   .team-intro{grid-template-columns:1fr; gap:20px;}
+  .person .who h3{font-size:19px;}
+  .person .who .role{font-size:13.5px;}
 }
