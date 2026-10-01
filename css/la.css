@@ -115,6 +115,14 @@ h1,h2,h3,h4{
 }
 .site-head.solid .brand .on-dark{display:none;}
 .site-head.solid .brand .on-light{display:block;}
+
+/* Mientras se hace scroll dentro del hero (todavía no se llega a las
+   demás secciones): banda azul solida, en vez de quedar transparente */
+.site-head.hero-scroll{
+  background:var(--navy-950);
+  border-bottom-color:rgba(255,255,255,.08);
+  box-shadow:0 6px 24px -20px rgba(0,0,0,.5);
+}
 .site-head.solid .brand img{height:42px;}
 .site-head.solid .nav a{color:var(--ink);}
 .site-head.solid .btn-ghost{color:var(--ink); border-color:var(--line);}
@@ -314,6 +322,11 @@ h1,h2,h3,h4{
 .lead-in{max-width:760px; margin-bottom:56px;}
 .lead-in h2{font-size:clamp(28px,3.5vw,46px);}
 .lead-in p{margin-top:20px; font-size:17.5px; max-width:64ch;}
+/* El texto del bloque de contacto cabe en una sola línea */
+#contacto .lead-in p{max-width:none; white-space:nowrap;}
+@media (max-width:760px){
+  #contacto .lead-in p{white-space:normal;}
+}
 .lead-in.center{margin-inline:auto; text-align:center;}
 
 /* Intro: declaración + pilares */

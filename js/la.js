@@ -134,10 +134,16 @@ const initHeader = () => {
   }
 
   const onScroll = () => {
-    const past = window.scrollY > window.innerHeight - 120;
-    head.classList.toggle('solid', past);
+    const y = window.scrollY;
+    const heroHeight = hero.offsetHeight;
+    const pastHero = y > heroHeight - 120;
+    // Dentro del hero pero ya con scroll (no en el extremo superior): banda azul.
+    // Al llegar a las demás secciones: banda blanca (.solid).
+    head.classList.toggle('solid', pastHero);
+    head.classList.toggle('hero-scroll', y > 10 && !pastHero);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
   onScroll();
 };
 
