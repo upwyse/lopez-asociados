@@ -3,77 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>López & Asociados | Derecho Laboral y Seguridad Social en Colombia</title>
-<meta name="description" content="Firma especializada en derecho laboral y seguridad social en Colombia. Más de 20 años asesorando y representando empresas en Bogotá y Medellín.">
+<title>López &amp; Asociados | Derecho laboral y seguridad social</title>
+<meta name="description" content="Firma especializada en derecho laboral y seguridad social en Colombia. Asesoría y representación de empresas en Bogotá y Medellín.">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="css/styles.css?v=17">
+<link rel="stylesheet" href="css/la.css?v=22">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container nav-row">
-    <a href="index.html" class="logo" aria-label="López & Asociados — inicio">
-      <img src="assets/img/logo-lockup.png" alt="López & Asociados" class="logo-img">
+<header class="site-head" id="head">
+  <div class="bar">
+    <a href="index.html" class="brand">
+      <img class="on-dark" src="assets/img/logo-lockup-white.png" alt="López &amp; Asociados">
+      <img class="on-light" src="assets/img/logo-lockup.png" alt="López &amp; Asociados">
     </a>
-    <nav class="nav-links" id="nav-links">
-      <a href="index.html" class="active">Inicio</a>
-
-      <div class="nav-item">
-        <a href="quienes-somos.html">Quiénes somos
-          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="nav-dropdown">
-          <div class="dd-label">Conozca la firma</div>
-          <a href="quienes-somos.html#la-firma">La Firma</a>
-          <a href="quienes-somos.html#fortalezas">Nuestras Fortalezas</a>
-          <a href="quienes-somos.html#redes">Nuestras Redes</a>
-          <a href="quienes-somos.html#historia">Nuestra Historia</a>
-          <a href="quienes-somos.html#experiencia">Nuestra Experiencia</a>
-          <div class="dd-divider"></div>
-          <div class="dd-label">Nuestro equipo</div>
-          <a href="nuestro-equipo.html">Nuestros Socios</a>
-          <a href="nuestro-equipo.html">Líderes y Coordinadores</a>
-          <a href="nuestro-equipo.html">Responsables de Equipo</a>
-          <a href="nuestro-equipo.html">Nuestros Equipos</a>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="servicios.html">Servicios
-          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="nav-dropdown">
-          <a href="servicio-consultoria-laboral.html">Consultoría laboral</a>
-          <a href="servicio-auditorias-diagnostico.html">Auditorías y Diagnóstico</a>
-          <a href="servicio-representacion-judicial.html">Representación judicial y administrativa</a>
-          <a href="servicio-negociacion-colectiva.html">Negociación colectiva</a>
-          <a href="servicio-transformacion-laboral.html">Transformación y entorno laboral</a>
-          <a href="servicio-capacitaciones.html">Capacitaciones</a>
-          <div class="dd-divider"></div>
-          <a href="servicios.html">Ver todos los servicios</a>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="novedades.html">Novedades Laborales
-          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
-        <div class="nav-dropdown">
-          <a href="novedades.html#tendencias">Tendencias</a>
-          <a href="novedades.html#articulos">Artículos</a>
-          <a href="novedades.html#boletines">Boletines</a>
-        </div>
-      </div>
-
-      <a href="nuestro-equipo.html">Nuestro Equipo</a>
-      <a href="contacto.html">Contacto</a>
+    <nav class="nav" id="nav">
+      <a href="la-firma.html">La firma</a>
+      <a href="la-servicios.html">Servicios</a>
+      <a href="la-equipo.html">Equipo</a>
+      <a href="la-novedades.html">Novedades</a>
     </nav>
     <div class="nav-cta">
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="#contacto" class="btn btn-ghost">Contáctenos</a>
     </div>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -81,275 +33,404 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="reveal in">
-        <div class="eyebrow">La firma laboral más grande de Colombia</div>
-        <h1 class="hero-title">Soluciones jurídicas <span class="hl">laborales</span><br>con <span class="hero-italic">respaldo y precisión</span></h1>
-        <p class="lead">Somos una firma especializada en derecho laboral y seguridad social. Asesoramos y representamos a nuestros clientes teniendo en cuenta su visión estratégica, con el fin de garantizar su satisfacción por medio de nuestras soluciones legales.</p>
-        <div class="hero-actions">
-          <a href="servicios.html" class="btn btn-primary">Conocer nuestros servicios</a>
-          <a href="contacto.html" class="btn btn-outline-light">Contáctenos</a>
-        </div>
-        <div class="hero-badges">
-          <div>
-            <div class="badge-label">RECONOCIMIENTO</div>
-            <div class="badge-value"><b>Band 1</b> Chambers &amp; Partners</div>
+    <video autoplay muted loop playsinline poster="assets/video/hero-poster.jpg" aria-hidden="true">
+      <source src="assets/video/hero-justicia.webm" type="video/webm">
+      <source src="assets/video/hero-justicia.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <h1>Soluciones jurídicas laborales con respaldo y precisión</h1>
+      <p class="lede">Somos una firma especializada en derecho laboral y seguridad social. Asesoramos y representamos a las empresas con visión estratégica, económica y de contexto.</p>
+      <div class="cta-row">
+        <a href="#contacto" class="btn btn-primary">Contáctenos</a>
+        <a href="la-servicios.html" class="btn btn-ghost">Conocer servicios</a>
+      </div>
+      <div class="figures" id="figures">
+        <div class="card">
+          <div class="eyebrow-mini">LA FIRMA EN CIFRAS</div>
+          <div class="viewport">
+            <div class="fig on"><b>+20</b><span>Años de experiencia en derecho laboral</span></div>
+            <div class="fig"><b>+120</b><span>Empresas acompañadas</span></div>
+            <div class="fig"><b>+100</b><span>Abogados especializados</span></div>
           </div>
-          <div>
-            <div class="badge-label">EXCELENCIA</div>
-            <div class="badge-value"><b>Top Tier</b> The Legal 500</div>
+          <div class="bars" id="figbars">
+            <button type="button" aria-current="true" aria-label="Años de experiencia"></button>
+            <button type="button" aria-current="false" aria-label="Empresas acompañadas"></button>
+            <button type="button" aria-current="false" aria-label="Abogados especializados"></button>
           </div>
         </div>
       </div>
-      <div class="hero-media reveal in">
-        <img src="assets/img/hero-inicio.jpg" alt="Equipo de López & Asociados en una reunión de trabajo">
-        <div class="hero-stat">
-          <div class="num">20+</div>
-          <div class="label">AÑOS DE EXPERIENCIA</div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="band">
+    <div class="wrap intro enter">
+      <div class="say">
+        <div class="tag">SOBRE NOSOTROS</div>
+        <h2>Una firma comprometida con sus <em>clientes</em> y resultados</h2>
+        <p>Ofrecemos soluciones a la medida en los temas legales laborales y de seguridad social, con un equipo interdisciplinario que construye la estrategia adecuada para cumplir sus objetivos.</p>
+        <a href="la-firma.html" class="btn btn-outline">Conozca la firma</a>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <div class="ptxt">
+            <span class="num">01</span>
+            <h3>Asesoría jurídica personalizada y estratégica</h3>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <div class="ptxt">
+            <span class="num">02</span>
+            <h3>Equipo interdisciplinario con visión económica y social</h3>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6zM19 7l-3 6a3 3 0 0 0 6 0l-3-6zM5 7h14M9 21h6"/></svg></span>
+          <div class="ptxt">
+            <span class="num">03</span>
+            <h3>Representación ante todas las instancias judiciales</h3>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS STRIP -->
-  <section class="stats-strip">
-    <div class="container row">
-      <div class="item">
-        <div class="top"><em>+20</em> años</div>
-        <div class="bottom"><b>de experiencia</b> en derecho laboral</div>
-      </div>
-      <div class="item">
-        <div class="top"><em>Top</em> Ranked</div>
-        <div class="bottom"><b>Chambers &amp; Partners</b><br>Latin America 2025</div>
-      </div>
-      <div class="item">
-        <div class="top"><em>Top</em> Tier</div>
-        <div class="bottom"><b>The Legal 500</b><br>Latin America 2024</div>
-      </div>
-      <div class="item">
-        <div class="top"><em>+100</em></div>
-        <div class="bottom"><b>Abogados</b> especializados en Derecho Laboral</div>
+  <!-- SERVICIOS -->
+  <section class="mosaic-band" id="servicios">
+    <div class="wrap">
+      <div class="inner">
+        <div class="mosaic-say">
+          <div class="tag">SERVICIOS</div>
+          <h2>Conozca nuestro portafolio en derecho <em>laboral</em></h2>
+          <p>Más de 20 años atendiendo de manera integral y estructurada las necesidades laborales de las empresas.</p>
+          <a href="la-servicios.html" class="btn btn-ghost">Ver todos los servicios</a>
+        </div>
+
+        <div class="mosaic" id="mosaic">
+          <div class="mos-col" style="--dur:46s;">
+            <div class="track">
+              <a class="mos-item h-tall" href="la-servicio-consultoria.html">
+                <img src="assets/img/mosaic/m4.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Consultoría laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-auditorias.html">
+                <img src="assets/img/mosaic/m3.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Auditorías y Diagnóstico</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-representacion.html">
+                <img src="assets/img/mosaic/m2.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Representación judicial</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-negociacion.html">
+                <img src="assets/img/mosaic/m5.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Negociación colectiva</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-transformacion.html">
+                <img src="assets/img/mosaic/m1.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Transformación laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-capacitaciones.html">
+                <img src="assets/img/mosaic/m6.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Capacitaciones</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-consultoria.html">
+                <img src="assets/img/mosaic/m4.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Consultoría laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-auditorias.html">
+                <img src="assets/img/mosaic/m3.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Auditorías y Diagnóstico</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-representacion.html">
+                <img src="assets/img/mosaic/m2.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Representación judicial</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-negociacion.html">
+                <img src="assets/img/mosaic/m5.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Negociación colectiva</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-transformacion.html">
+                <img src="assets/img/mosaic/m1.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Transformación laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-capacitaciones.html">
+                <img src="assets/img/mosaic/m6.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Capacitaciones</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+            </div>
+          </div>
+          <div class="mos-col down" style="--dur:50s;">
+            <div class="track">
+              <a class="mos-item h-mid" href="la-servicio-representacion.html">
+                <img src="assets/img/mosaic/m2.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Representación judicial</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-negociacion.html">
+                <img src="assets/img/mosaic/m5.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Negociación colectiva</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-transformacion.html">
+                <img src="assets/img/mosaic/m1.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Transformación laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-capacitaciones.html">
+                <img src="assets/img/mosaic/m6.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Capacitaciones</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-consultoria.html">
+                <img src="assets/img/mosaic/m4.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Consultoría laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-auditorias.html">
+                <img src="assets/img/mosaic/m3.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Auditorías y Diagnóstico</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-representacion.html">
+                <img src="assets/img/mosaic/m2.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Representación judicial</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-negociacion.html">
+                <img src="assets/img/mosaic/m5.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Negociación colectiva</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-transformacion.html">
+                <img src="assets/img/mosaic/m1.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Transformación laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-capacitaciones.html">
+                <img src="assets/img/mosaic/m6.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Capacitaciones</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-consultoria.html">
+                <img src="assets/img/mosaic/m4.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Consultoría laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-auditorias.html">
+                <img src="assets/img/mosaic/m3.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Auditorías y Diagnóstico</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+            </div>
+          </div>
+          <div class="mos-col" style="--dur:52s;">
+            <div class="track">
+              <a class="mos-item h-tall" href="la-servicio-transformacion.html">
+                <img src="assets/img/mosaic/m1.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Transformación laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-capacitaciones.html">
+                <img src="assets/img/mosaic/m6.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Capacitaciones</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-consultoria.html">
+                <img src="assets/img/mosaic/m4.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Consultoría laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-auditorias.html">
+                <img src="assets/img/mosaic/m3.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Auditorías y Diagnóstico</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-representacion.html">
+                <img src="assets/img/mosaic/m2.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Representación judicial</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-negociacion.html">
+                <img src="assets/img/mosaic/m5.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Negociación colectiva</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-transformacion.html">
+                <img src="assets/img/mosaic/m1.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Transformación laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-capacitaciones.html">
+                <img src="assets/img/mosaic/m6.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Capacitaciones</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-consultoria.html">
+                <img src="assets/img/mosaic/m4.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Consultoría laboral</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-mid" href="la-servicio-auditorias.html">
+                <img src="assets/img/mosaic/m3.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Auditorías y Diagnóstico</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-representacion.html">
+                <img src="assets/img/mosaic/m2.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Representación judicial</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+              <a class="mos-item h-tall" href="la-servicio-negociacion.html">
+                <img src="assets/img/mosaic/m5.jpg" alt="" loading="lazy">
+                <div class="lbl"><span>Negociación colectiva</span><span class="arw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE NOSOTROS -->
-  <section class="section" id="sobre-nosotros">
-    <div class="container about-grid">
-      <img class="reveal" src="assets/img/about-office.jpg" alt="Socios de López & Asociados en sala de juntas">
-      <div class="reveal">
-        <div class="eyebrow on-light">Sobre nosotros</div>
-        <h2>Una firma comprometida con sus clientes y resultados</h2>
-        <p class="mt-16">López &amp; Asociados ofrece soluciones a su medida en los temas legales laborales y de seguridad social, poniendo a su disposición nuestra experiencia y calidad. Tenemos un equipo interdisciplinario que lo acompañará con aproximaciones de asesoría con una visión legal laboral, económica, social y de contexto para construir la estrategia adecuada y cumplir sus objetivos.</p>
-        <ul class="about-list">
-          <li><span class="dash"></span>Asesoría jurídica personalizada y estratégica</li>
-          <li><span class="dash"></span>Equipo interdisciplinario con visión económica y social</li>
-          <li><span class="dash"></span>Representación ante todas las instancias judiciales</li>
-        </ul>
-        <a href="nuestro-equipo.html" class="link-arrow">Conócenos
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+  <!-- DECLARACIÓN -->
+  <section class="band dark">
+    <div class="wrap claim enter">
+      <div>
+        <h2><em>López &amp; Asociados</em> es la firma laboral más grande de Colombia</h2>
+        <p>Acompañamos a nuestros clientes en la definición de la estrategia en la atención de procesos judiciales, audiencias y diligencias, así como en la vigilancia de los procesos laborales en las diferentes instancias de la jurisdicción laboral y contencioso administrativa.</p>
+        <a href="la-firma.html" class="btn btn-primary">Conozca la firma</a>
       </div>
-    </div>
-  </section>
-
-  <!-- SERVICIOS PREVIEW -->
-  <section class="section soft">
-    <div class="container">
-      <div class="services-feature reveal">
-        <div class="sf-head">
-          <div class="eyebrow">Nuestros servicios</div>
-          <h2>Portafolio integral en derecho laboral y seguridad social</h2>
-          <p>Gracias a más de 20 años de experiencia, hemos consolidado un amplio portafolio que atiende de manera integral y estructurada las necesidades de las empresas.</p>
-        </div>
-        <div class="sf-grid">
-          <a class="sf-card" href="servicio-consultoria-laboral.html">
-            <span class="sf-num">01</span>
-            <h3>Consultoría laboral</h3>
-            <p>Individual, colectiva, migratoria y de seguridad social.</p>
-            <span class="sf-arrow">Ver más
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </span>
-          </a>
-          <a class="sf-card" href="servicio-auditorias-diagnostico.html">
-            <span class="sf-num">02</span>
-            <h3>Auditorías y Diagnóstico</h3>
-            <p>Cumplimiento, SST, nómina y Derechos Humanos.</p>
-            <span class="sf-arrow">Ver más
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </span>
-          </a>
-          <a class="sf-card" href="servicio-representacion-judicial.html">
-            <span class="sf-num">03</span>
-            <h3>Representación judicial y administrativa</h3>
-            <p>Defensa ante jueces, Mintrabajo, SENA, ICBF y UGPP.</p>
-            <span class="sf-arrow">Ver más
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </span>
-          </a>
-          <a class="sf-card" href="servicio-negociacion-colectiva.html">
-            <span class="sf-num">04</span>
-            <h3>Negociación colectiva</h3>
-            <p>Estrategia sindical y relaciones con organizaciones de trabajadores.</p>
-            <span class="sf-arrow">Ver más
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </span>
-          </a>
-          <a class="sf-card" href="servicio-transformacion-laboral.html">
-            <span class="sf-num">05</span>
-            <h3>Transformación y entorno laboral</h3>
-            <p>Estrategia laboral y económica para decisiones de alto impacto.</p>
-            <span class="sf-arrow">Ver más
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </span>
-          </a>
-          <a class="sf-card" href="servicio-capacitaciones.html">
-            <span class="sf-num">06</span>
-            <h3>Capacitaciones</h3>
-            <p>Formación en todos los asuntos de interés para los empleadores.</p>
-            <span class="sf-arrow">Ver más
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </span>
-          </a>
-        </div>
-        <div class="see-all">
-          <a href="servicios.html" class="link-arrow">Ver todos los servicios
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-      </div>
+      <div class="shot"><img src="assets/img/team-meeting.jpg" alt="Equipo de López &amp; Asociados en reunión"></div>
     </div>
   </section>
 
   <!-- RECONOCIMIENTOS -->
-  <section class="section navy">
-    <div class="container">
-      <div class="section-head center reveal">
-        <div class="eyebrow center">Reconocimientos internacionales</div>
+  <section class="band dark awards-band">
+    <div class="wrap">
+      <div class="lead-in enter">
         <h2>Respaldados por los rankings legales más prestigiosos</h2>
+        <p>El trabajo de nuestro equipo ha sido reconocido por las publicaciones jurídicas de mayor prestigio en Latinoamérica.</p>
       </div>
-      <div class="badges-grid reveal">
-        <div class="badge-card">
-          <img src="assets/img/badge-chambers.png" alt="Chambers & Partners — Top Ranked Latin America 2025">
-          <h4>Chambers &amp; Partners</h4>
-          <p>Top Ranked Latin America. Reconocimiento por la calidad de nuestro equipo en derecho laboral.</p>
+      <div class="awards enter">
+        <div class="award">
+          <div class="logo"><img src="assets/img/badge-chambers.png" alt="Chambers &amp; Partners"></div>
+          <span class="tier">Band 1</span>
+          <h3>Chambers &amp; Partners</h3>
+          <p>Top Ranked Latin America. Reconocimiento a la calidad de nuestro equipo en derecho laboral.</p>
         </div>
-        <div class="badge-card">
-          <img src="assets/img/badge-legal500.png" alt="The Legal 500 — Top Tier Latin America 2024">
-          <h4>The Legal 500</h4>
+        <div class="award">
+          <div class="logo"><img src="assets/img/badge-legal500.png" alt="The Legal 500"></div>
+          <span class="tier">Top Tier</span>
+          <h3>The Legal 500</h3>
           <p>Top Tier Latin America. Liderazgo consolidado en asesoría laboral y seguridad social.</p>
         </div>
-        <div class="badge-card">
-          <img src="assets/img/badge-latinlawyer.png" alt="LatinLawyer 250 — Highly Recommended Firm">
-          <h4>LatinLawyer 250</h4>
-          <p>Highly Recommended Firm. Reconocidos por nuestra trayectoria y profundidad técnica.</p>
+        <div class="award">
+          <div class="logo"><img src="assets/img/badge-latinlawyer.png" alt="LatinLawyer 250"></div>
+          <span class="tier">Highly Recommended</span>
+          <h3>LatinLawyer 250</h3>
+          <p>Reconocidos por nuestra trayectoria y profundidad técnica.</p>
         </div>
-        <div class="badge-card">
-          <img src="assets/img/badge-leadersleague.png" alt="Leaders League — Ranked Firm 2023">
-          <h4>Leaders League</h4>
-          <p>Ranked Firm. Firma recomendada por práctica especializada en derecho laboral colombiano.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INSIGHTS -->
-  <section class="section" id="insights">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow on-light">Insights</div>
-        <h2>Novedades laborales</h2>
-        <p>Mantente al día con los cambios normativos y jurisprudenciales que afectan a las empresas colombianas.</p>
-      </div>
-      <div class="insights-grid reveal">
-        <article class="insight-feature">
-          <img src="assets/img/team-meeting.jpg" alt="Equipo analizando la ponencia de la reforma laboral">
-          <div class="body">
-            <div class="insight-tag">Boletín destacado</div>
-            <h3>Proposiciones Tercer Debate Reforma Laboral por temáticas</h3>
-            <p>Análisis de las ponencias presentadas ante la Comisión Cuarta del Senado de la República para el tercer debate de la reforma laboral.</p>
-          </div>
-        </article>
-        <div class="insight-list">
-          <div class="insight-row">
-            <h4>Consulta Popular 2.0</h4>
-            <p>El panorama político y legislativo pone sobre la mesa las alternativas para que el Gobierno logre la Reforma Laboral pretendida.</p>
-          </div>
-          <div class="insight-row">
-            <h4>Nueva regulación a la práctica de evaluaciones médicas ocupacionales</h4>
-            <p>Normativa que regula frecuencia, costos y responsabilidades en el marco del SG-SST.</p>
-          </div>
+        <div class="award">
+          <div class="logo"><img src="assets/img/badge-leadersleague.png" alt="Leaders League"></div>
+          <span class="tier">Ranked Firm</span>
+          <h3>Leaders League</h3>
+          <p>Firma recomendada por su práctica especializada en derecho laboral colombiano.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section no-top">
-    <div class="container">
-      <div class="cta-banner reveal">
-        <div>
-          <div class="eyebrow">Consulta especializada</div>
-          <h2>¿Tiene una situación legal que resolver?</h2>
-          <p>Nuestro equipo está disponible para orientarle.</p>
-          <a href="contacto.html" class="btn btn-primary">Contáctenos</a>
-        </div>
-        <div class="cta-offices">
-          <div class="cta-office">
-            <div class="tag">OFICINA</div>
-            <div class="city">Bogotá</div>
-            <div class="detail">Calle 70 # 7 – 30 piso 6, Edificio Séptima Setenta<br>(601) 340 6944</div>
+  <!-- EQUIPO -->
+  <section class="band tint">
+    <div class="wrap">
+      <div class="lead-in enter">
+        <h2>Profesionales comprometidos con su tranquilidad</h2>
+        <p>Los Socios de López &amp; Asociados tienen a su cargo el direccionamiento y orientación de diferentes áreas de la firma.</p>
+      </div>
+      <div class="people enter">
+        <a class="person" href="la-perfil-angelica.html">
+          <div class="shot"><img src="assets/img/team-1-angelica.jpg" alt="Angélica María Carrión Barrero"></div>
+          <h3>Angélica María Carrión Barrero</h3>
+          <p class="role">Directora General – Socia</p>
+        </a>
+        <a class="person" href="la-perfil-alejandro.html">
+          <div class="shot"><img src="assets/img/team-2-alejandro.jpg" alt="Alejandro Miguel Castellanos López"></div>
+          <h3>Alejandro Miguel Castellanos López</h3>
+          <p class="role">Director del Área de Litigios y Representación Judicial – Socio</p>
+        </a>
+        <a class="person" href="la-perfil-rocio.html">
+          <div class="shot"><img src="assets/img/team-3-rocio.jpg" alt="Rocío Lagos Prieto"></div>
+          <h3>Rocío Lagos Prieto</h3>
+          <p class="role">Directora de Relacionamiento Laboral – Socia</p>
+        </a>
+      </div>
+      <p style="margin-top:38px;"><a href="la-equipo.html" class="btn btn-outline">Ver todo el equipo</a></p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="band" id="contacto">
+    <div class="wrap">
+      <div class="lead-in enter">
+        <h2>Cuéntenos su caso</h2>
+        <p>Complete el formulario y un miembro de nuestro equipo se pondrá en contacto con usted.</p>
+      </div>
+      <div class="contact enter">
+        <div class="side">
+          <img src="assets/img/hero-inicio.jpg" alt="Equipo de López &amp; Asociados">
+          <div class="over">
+            <h3>Estamos para ayudarle</h3>
+            <p>Bogotá · Calle 70 # 7 – 30, piso 6<br>Medellín · Carrera 43A #5A – 113<br>abogados@lopezasociados.net</p>
           </div>
-          <div class="cta-office">
-            <div class="tag">PRESENCIA EN</div>
-            <div class="city">Medellín</div>
-            <div class="detail">Carrera 43A #5A – 113, Torre Sur Of. 613, Edificio One Plaza<br>(604) 204 2220</div>
-          </div>
         </div>
+        <form id="form" novalidate>
+          <div class="grid">
+            <div class="field"><label for="n">Nombre <i>*</i></label><input id="n" name="nombre" type="text" required></div>
+            <div class="field"><label for="a">Apellido <i>*</i></label><input id="a" name="apellido" type="text" required></div>
+            <div class="field"><label for="e">Correo electrónico <i>*</i></label><input id="e" name="email" type="email" required></div>
+            <div class="field"><label for="t">Teléfono <i>*</i></label><input id="t" name="telefono" type="tel" required></div>
+            <div class="field"><label for="em">Empresa <i>*</i></label><input id="em" name="empresa" type="text" required></div>
+            <div class="field"><label for="as">Asunto <i>*</i></label>
+              <select id="as" name="asunto" required>
+                <option value="" selected disabled>Seleccione una opción</option>
+                <option>Consultoría laboral</option>
+                <option>Auditorías y Diagnóstico</option>
+                <option>Representación judicial y administrativa</option>
+                <option>Negociación colectiva</option>
+                <option>Transformación y entorno laboral</option>
+                <option>Capacitaciones</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="field wide"><label for="m">Mensaje <i>*</i></label><textarea id="m" name="mensaje" required placeholder="Describa brevemente su caso"></textarea></div>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="p" required>
+            <label for="p">He leído y acepto la <a href="#">Política de tratamiento de datos</a> de López &amp; Asociados. <i style="font-style:normal;color:var(--orange-700)">*</i></label>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+          <div class="sent" id="sent" role="status">Hemos recibido su mensaje. Un miembro de nuestro equipo se pondrá en contacto con usted.</div>
+        </form>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo">
-          <img src="assets/img/logo-lockup-white.png" alt="López & Asociados" class="logo-img">
-        </a>
-        <p>López &amp; Asociados es una firma dedicada a la práctica del derecho laboral y de la seguridad social con énfasis en la asesoría y representación de empresas.</p>
-        <a href="mailto:abogados@lopezasociados.net" class="email">abogados@lopezasociados.net</a>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <h2>¿Tiene una situación laboral que resolver?</h2>
+      <a href="#contacto" class="btn btn-primary">Contáctenos</a>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <img src="assets/img/logo-lockup-white.png" alt="López &amp; Asociados">
+        <p>Firma dedicada a la práctica del derecho laboral y de la seguridad social, con énfasis en la asesoría y representación de empresas.</p>
       </div>
-      <div class="footer-col">
-        <h5>Links de interés</h5>
+      <div>
+        <h4>Navegación</h4>
         <ul>
-          <li><a href="quienes-somos.html">Quiénes somos</a></li>
-          <li><a href="servicios.html">Servicios</a></li>
-          <li><a href="novedades.html">Novedades laborales</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="la-firma.html">La firma</a></li>
+          <li><a href="la-servicios.html">Servicios</a></li>
+          <li><a href="la-equipo.html">Equipo</a></li>
+          <li><a href="la-novedades.html">Novedades</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5>Bogotá</h5>
-        <address>Bogotá, Colombia<br>Calle 70 # 7 – 30 piso 6<br>Edificio Séptima Setenta<br>PBX (601) 340 6944<br>FAX (601) 312 0321</address>
+      <div>
+        <h4>Bogotá</h4>
+        <address>Calle 70 # 7 – 30, piso 6<br>Edificio Séptima Setenta<br>PBX (601) 340 6944</address>
       </div>
-      <div class="footer-col">
-        <h5>Medellín</h5>
-        <address>Medellín, Colombia<br>Carrera 43A #5A – 113<br>Torre Sur Of. 613<br>Edificio One Plaza<br>PBX (604) 204 2220</address>
+      <div>
+        <h4>Medellín</h4>
+        <address>Carrera 43A #5A – 113<br>Torre Sur Of. 613<br>PBX (604) 204 2220</address>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>Copyright © 2025 López y Asociados</span>
-      <span>Política de tratamiento de datos</span>
-      <span class="social-icon" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-      </span>
+    <div class="foot-base">
+      <span>© 2025 López &amp; Asociados</span>
+      <span>abogados@lopezasociados.net</span>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js?v=17"></script>
+<script src="js/la.js?v=14"></script>
 </body>
 </html>
