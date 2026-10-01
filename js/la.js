@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initReveal();
   initFigures();
+  initHeroSlider();
   initGallery();
   initMosaic();
   initPeopleFilter();
@@ -15,6 +16,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Cifras del hero: pasan solas de una a la siguiente,
    y también al pulsar los indicadores. */
+/* Slider del hero: video + 2 fotos, con flechas, puntos y avance automático */
+const initHeroSlider = () => {
+  const root = document.getElementById('heroSlider');
+  const nav = document.getElementById('heroNav');
+  if (!root || !nav) return;
+
+  const slides = [...root.querySelectorAll('.slide')];
+  const dots = [...nav.querySelectorAll('#heroDots button')];
+  const prevBtn = document.getElementById('heroPrev');
+  const nextBtn = document.getElementById('heroNext');
+  if (slides.length < 2) return;
+
+  let index = 0;
+  let timer = null;
+  const DELAY = 6500;
+
+  const show = (next) => {
+    const target = (next + slides.length) % slides.length;
+    if (target === index) return;
+    slides[index].classList.remove('active');
+    dots[index].classList.remove('active');
+    index = target;
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+
+    // El video de la primera diapositiva retoma desde el inicio al volver a verse
+    const vid = slides[index].querySelector('video');
+    if (vid) { vid.currentTime = 0; vid.play().catch(() => {}); }
+  };
+
+  const stop = () => { if (timer) window.clearInterval(timer); timer = null; };
+  const play = () => {
+    stop();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = window.setInterval(() => show(index + 1), DELAY);
+  };
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { show(index - 1); play(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { show(index + 1); play(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); play(); }));
+
+  play();
+};
+
 const initFigures = () => {
   const box = document.getElementById('figures');
   if (!box) return;

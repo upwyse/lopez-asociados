@@ -6,7 +6,7 @@
 <title>López &amp; Asociados | Derecho laboral y seguridad social</title>
 <meta name="description" content="Firma especializada en derecho laboral y seguridad social en Colombia. Asesoría y representación de empresas en Bogotá y Medellín.">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/la.css?v=26">
+<link rel="stylesheet" href="css/la.css?v=28">
 </head>
 <body>
 
@@ -33,10 +33,20 @@
 
   <!-- HERO -->
   <section class="hero">
-    <video autoplay muted loop playsinline poster="assets/video/hero-poster.jpg" aria-hidden="true">
-      <source src="assets/video/hero-justicia.webm" type="video/webm">
-      <source src="assets/video/hero-justicia.mp4" type="video/mp4">
-    </video>
+    <div class="hero-slider" id="heroSlider">
+      <div class="slide active" data-slide="0">
+        <video autoplay muted loop playsinline poster="assets/video/hero-poster.jpg" aria-hidden="true">
+          <source src="assets/video/hero-justicia.webm" type="video/webm">
+          <source src="assets/video/hero-justicia.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="slide" data-slide="1">
+        <img src="assets/img/office/staircase.jpg" alt="Oficinas de López &amp; Asociados">
+      </div>
+      <div class="slide" data-slide="2">
+        <img src="assets/img/office/lobby.jpg" alt="Recepción de López &amp; Asociados">
+      </div>
+    </div>
     <div class="wrap">
       <h1>Soluciones jurídicas laborales con respaldo y precisión</h1>
       <p class="lede">Somos una firma especializada en derecho laboral y seguridad social. Asesoramos y representamos a las empresas con visión estratégica, económica y de contexto.</p>
@@ -59,6 +69,19 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="hero-nav" id="heroNav">
+      <div class="dots" id="heroDots">
+        <button type="button" class="active" aria-label="Diapositiva 1"></button>
+        <button type="button" aria-label="Diapositiva 2"></button>
+        <button type="button" aria-label="Diapositiva 3"></button>
+      </div>
+      <button type="button" id="heroPrev" aria-label="Diapositiva anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button type="button" id="heroNext" aria-label="Siguiente diapositiva">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
   </section>
 
@@ -276,12 +299,9 @@
   <!-- DECLARACIÓN -->
   <section class="band dark claim-band">
     <div class="wrap claim enter">
-      <div>
-        <h2><em>López &amp; Asociados</em> es la firma laboral más grande de Colombia</h2>
-        <p>Acompañamos a nuestros clientes en la definición de la estrategia en la atención de procesos judiciales, audiencias y diligencias, así como en la vigilancia de los procesos laborales en las diferentes instancias de la jurisdicción laboral y contencioso administrativa.</p>
-        <a href="la-firma.html" class="btn btn-primary">Conozca la firma</a>
-      </div>
-      <div class="shot"><img src="assets/img/team-meeting.jpg" alt="Equipo de López &amp; Asociados en reunión"></div>
+      <h2><em>López &amp; Asociados</em> es la firma laboral más grande de Colombia</h2>
+      <p>Acompañamos a nuestros clientes en la definición de la estrategia en la atención de procesos judiciales, audiencias y diligencias, así como en la vigilancia de los procesos laborales en las diferentes instancias de la jurisdicción laboral y contencioso administrativa.</p>
+      <a href="la-firma.html" class="btn btn-primary">Conozca la firma</a>
     </div>
   </section>
 
@@ -438,6 +458,6 @@
   </div>
 </footer>
 
-<script src="js/la.js?v=15"></script>
+<script src="js/la.js?v=16"></script>
 </body>
 </html>
