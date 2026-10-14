@@ -252,7 +252,7 @@ const initPeopleFilter = () => {
     const q = (search ? search.value : '').trim().toLowerCase();
     let shown = 0;
 
-    grid.querySelectorAll('.person, .tm-card').forEach((card) => {
+    grid.querySelectorAll('.person, .tm-card, .pro-card').forEach((card) => {
       const areas = (card.dataset.area || '').split(' ');
       const services = (card.dataset.service || '').split(' ');
       const matchArea = area === 'all' || areas.includes(area);
