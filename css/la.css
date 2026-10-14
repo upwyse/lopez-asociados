@@ -1105,12 +1105,12 @@ form .btn{margin-top:24px;}
   display:grid; grid-template-columns:repeat(2,1fr); gap:22px;
   overflow:visible; scroll-snap-type:none;
 }
-.gallery.grid-two .g-item{flex:initial; width:100%; height:300px;}
+.gallery.grid-two .g-item{flex:initial; width:100%; height:240px;}
 .gallery.grid-two .cap h3{font-size:28px; line-height:1.18;}
 .gallery.grid-two .cap p{font-size:16px;}
 @media (max-width:760px){
   .gallery.grid-two{grid-template-columns:1fr;}
-  .gallery.grid-two .g-item{height:270px;}
+  .gallery.grid-two .g-item{height:230px;}
   .gallery.grid-two .cap h3{font-size:23px;}
 }
 
