@@ -252,7 +252,7 @@ const initPeopleFilter = () => {
     const q = (search ? search.value : '').trim().toLowerCase();
     let shown = 0;
 
-    grid.querySelectorAll('.person, .tm-card, .pro-card').forEach((card) => {
+    grid.querySelectorAll('.person, .tm-card, .pro-card, .dir-item').forEach((card) => {
       const areas = (card.dataset.area || '').split(' ');
       const services = (card.dataset.service || '').split(' ');
       const matchArea = area === 'all' || areas.includes(area);
@@ -263,8 +263,25 @@ const initPeopleFilter = () => {
       if (show) shown += 1;
     });
 
+    // Oculta los grupos sin resultados y actualiza su contador
+    grid.querySelectorAll('.team-group').forEach((g) => {
+      const vis = g.querySelectorAll('.pro-card:not(.hidden), .dir-item:not(.hidden)').length;
+      g.classList.toggle('hidden', vis === 0);
+      const n = g.querySelector('.tg-count');
+      if (n) n.textContent = vis;
+    });
+
     if (empty) empty.classList.toggle('show', shown === 0);
   };
+
+  // Enlace directo desde una página de servicio: ?servicio=slug
+  const pre = new URLSearchParams(window.location.search).get('servicio');
+  if (pre && serviceSelect && [...serviceSelect.options].some((o) => o.value === pre)) {
+    serviceSelect.value = pre;
+    service = pre;
+    serviceSelect.classList.add('active');
+    apply();
+  }
 
   if (search) search.addEventListener('input', apply);
 

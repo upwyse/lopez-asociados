@@ -6,7 +6,7 @@
 <title>Equipo | López &amp; Asociados</title>
 <meta name="description" content="Conozca a los socios de López & Asociados.">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/la.css?v=57">
+<link rel="stylesheet" href="css/la.css?v=59">
 </head>
 <body>
 
@@ -42,13 +42,14 @@
       <div class="people-tools">
         <div class="finder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="finder" placeholder="Buscar por nombre o especialidad" aria-label="Buscar en el equipo">
+          <input type="text" id="finder" placeholder="Buscar por nombre o área" aria-label="Buscar en el equipo">
         </div>
         <div class="chips" id="chips">
           <button data-area="all" aria-pressed="true">Todos</button>
           <button data-area="socios" aria-pressed="false">Socios</button>
           <button data-area="lideres" aria-pressed="false">Líderes y coordinadores</button>
           <button data-area="responsables" aria-pressed="false">Responsables de equipo</button>
+          <button data-area="equipo" aria-pressed="false">Equipo</button>
         </div>
         <div class="select-wrap">
           <select id="serviceSelect" aria-label="Filtrar por servicio">
@@ -62,8 +63,11 @@
           </select>
         </div>
       </div>
-            <div class="pro-grid" id="people">
-        <a class="pro-card on-light" href="la-perfil-angelica.html" data-area="socios" data-service="consultoria transformacion" data-search="Angélica María Carrión Barrero Directora General – Socia Dirección General">
+            <div id="people" class="enter">
+      <section class="team-group" data-group="socios">
+        <h2 class="tg-title">Nuestros socios <span class="tg-count">7</span></h2>
+        <div class="pro-grid">
+        <a class="pro-card on-light" href="la-perfil-angelica.html" data-area="socios" data-service="consultoria representacion negociacion capacitaciones" data-search="Angélica María Carrión Barrero Consultoría laboral Representación ante autoridades administrativas Negociación colectiva Capacitaciones Directora General">
           <div class="pro-photo"><img src="assets/img/team-1-angelica.jpg" alt="Angélica Carrión&nbsp;B."></div>
           <div class="pro-info">
             <span class="pro-zone">Socia</span>
@@ -72,7 +76,7 @@
             <span class="pro-go">Ver perfil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
-        <a class="pro-card on-light" href="la-perfil-alejandro.html" data-area="socios" data-service="representacion" data-search="Alejandro Miguel Castellanos López Director del Área de Litigios y Representación Judicial – Socio Litigios">
+        <a class="pro-card on-light" href="la-perfil-alejandro.html" data-area="socios" data-service="representacion capacitaciones" data-search="Alejandro Miguel Castellanos López Representación ante autoridades judiciales y constitucionales Capacitaciones Director del Área de Litigios y Representación Judicial">
           <div class="pro-photo"><img src="assets/img/team-2-alejandro.jpg" alt="Alejandro Castellanos&nbsp;L."></div>
           <div class="pro-info">
             <span class="pro-zone">Socio</span>
@@ -81,7 +85,7 @@
             <span class="pro-go">Ver perfil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
-        <a class="pro-card on-light" href="la-perfil-rocio.html" data-area="socios" data-service="negociacion" data-search="Rocío Lagos Prieto Directora de Relacionamiento Laboral – Socia Relacionamiento">
+        <a class="pro-card on-light" href="la-perfil-rocio.html" data-area="socios" data-service="representacion negociacion" data-search="Rocío Lagos Prieto Representación ante autoridades administrativas Negociación colectiva Directora de Relacionamiento Laboral">
           <div class="pro-photo"><img src="assets/img/team-3-rocio.jpg" alt="Rocío Lagos&nbsp;P."></div>
           <div class="pro-info">
             <span class="pro-zone">Socia</span>
@@ -90,7 +94,7 @@
             <span class="pro-go">Ver perfil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
-        <a class="pro-card on-light" href="la-perfil-juanpablo.html" data-area="socios" data-service="capacitaciones transformacion" data-search="Juan Pablo López Moreno Director General – Unidad de Conocimiento Laboral (UCL) – Socio Conocimiento Laboral">
+        <a class="pro-card on-light" href="la-perfil-juanpablo.html" data-area="socios" data-service="auditorias negociacion transformacion" data-search="Juan Pablo López Moreno Negociación colectiva Auditorías, diagnósticos y proyectos laborales a la medida Análisis económico-laboral Optimización y planeación laboral estratégica Transformación laboral Director General – Unidad de Conocimiento Laboral (UCL)">
           <div class="pro-photo"><img src="assets/img/team-4-juanpablo.jpg" alt="Juan Pablo López&nbsp;M."></div>
           <div class="pro-info">
             <span class="pro-zone">Socio</span>
@@ -99,7 +103,7 @@
             <span class="pro-go">Ver perfil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
-        <a class="pro-card on-light" href="la-perfil-anamaria.html" data-area="socios" data-service="consultoria auditorias" data-search="Ana María Rubiano Delgado Directora de Consultoría – Socia Consultoría">
+        <a class="pro-card on-light" href="la-perfil-anamaria.html" data-area="socios" data-service="consultoria capacitaciones" data-search="Ana María Rubiano Delgado Consultoría laboral Asesoría migratoria Capacitaciones Directora de Consultoría">
           <div class="pro-photo"><img src="assets/img/team-5-anamaria.jpg" alt="Ana María Rubiano&nbsp;D."></div>
           <div class="pro-info">
             <span class="pro-zone">Socia</span>
@@ -108,8 +112,423 @@
             <span class="pro-go">Ver perfil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
+        <a class="pro-card on-light" href="la-perfil-mariateresa.html" data-area="socios" data-service="representacion" data-search="María Teresa González Representación ante autoridades judiciales y constitucionales Litigios y Representación Judicial">
+          <div class="pro-photo mono"><span>MG</span></div>
+          <div class="pro-info">
+            <span class="pro-zone">Socia</span>
+            <h3>María Teresa González</h3>
+            <p>Litigios y Representación Judicial</p>
+            <span class="pro-go">Ver perfil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+        <a class="pro-card on-light" href="la-perfil-german.html" data-area="socios" data-service="consultoria capacitaciones" data-search="Manuel Germán Torres Mora Consultoría laboral Capacitaciones Consultoría y Terceros">
+          <div class="pro-photo mono"><span>GT</span></div>
+          <div class="pro-info">
+            <span class="pro-zone">Socio</span>
+            <h3>Germán Torres&nbsp;M.</h3>
+            <p>Consultoría y Terceros</p>
+            <span class="pro-go">Ver perfil <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
       </div>
-      <p class="no-match" id="nomatch">No encontramos resultados. Intente con otro nombre o especialidad.</p>
+      </section>
+      <section class="team-group" data-group="lideres">
+        <h2 class="tg-title">Líderes y coordinadores <span class="tg-count">10</span></h2>
+        <div class="dir-grid">
+          <div class="dir-item" data-area="lideres" data-service="representacion" data-search="Camilo Ignacio Fonseca Díaz Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">CF</span>
+            <div class="dir-txt"><h4>Camilo Fonseca&nbsp;D.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="representacion negociacion" data-search="Diana Paola Velandia Representación ante autoridades administrativas Negociación colectiva">
+            <span class="dir-mono">DV</span>
+            <div class="dir-txt"><h4>Diana Velandia</h4><p>Representación · Negociación colectiva</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="transformacion capacitaciones" data-search="Diego Leal Vega Capacitaciones Transformación laboral">
+            <span class="dir-mono">DL</span>
+            <div class="dir-txt"><h4>Diego Leal&nbsp;V.</h4><p>Transformación laboral · Capacitaciones</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="transformacion" data-search="Edwin Mauricio Villamil Análisis económico-laboral Transformación laboral">
+            <span class="dir-mono">EV</span>
+            <div class="dir-txt"><h4>Edwin Villamil</h4><p>Transformación laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="representacion" data-search="Ginna Tatiana Díaz Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">GD</span>
+            <div class="dir-txt"><h4>Ginna Díaz</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="representacion" data-search="Heidy Jiménez Representación ante autoridades administrativas">
+            <span class="dir-mono">HJ</span>
+            <div class="dir-txt"><h4>Heidy Jiménez</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="representacion" data-search="Ismael Babativa Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">IB</span>
+            <div class="dir-txt"><h4>Ismael Babativa</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="representacion" data-search="Jorge Enrique Martínez Sierra Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">JM</span>
+            <div class="dir-txt"><h4>Jorge Martínez&nbsp;S.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="representacion" data-search="Karen Vejar Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">KV</span>
+            <div class="dir-txt"><h4>Karen Vejar</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="lideres" data-service="consultoria" data-search="Mónica Sierra Sánchez Consultoría laboral">
+            <span class="dir-mono">MS</span>
+            <div class="dir-txt"><h4>Mónica Sierra&nbsp;S.</h4><p>Consultoría laboral</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="team-group" data-group="responsables">
+        <h2 class="tg-title">Responsables de equipo <span class="tg-count">12</span></h2>
+        <div class="dir-grid">
+          <div class="dir-item" data-area="responsables" data-service="representacion negociacion" data-search="Andrés Felipe Valencia Representación ante autoridades administrativas Negociación colectiva">
+            <span class="dir-mono">AV</span>
+            <div class="dir-txt"><h4>Andrés Valencia</h4><p>Representación · Negociación colectiva</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="representacion negociacion" data-search="Claudia Liliana Velásquez Serrato Representación ante autoridades administrativas Negociación colectiva">
+            <span class="dir-mono">CV</span>
+            <div class="dir-txt"><h4>Claudia Velásquez&nbsp;S.</h4><p>Representación · Negociación colectiva</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="transformacion" data-search="Edna Viviana Cepeda Jaimes Análisis económico-laboral Transformación laboral">
+            <span class="dir-mono">EC</span>
+            <div class="dir-txt"><h4>Edna Cepeda&nbsp;J.</h4><p>Transformación laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="auditorias" data-search="Edwin Andrés Pinzón Mora Auditorías, diagnósticos y proyectos laborales a la medida">
+            <span class="dir-mono">EP</span>
+            <div class="dir-txt"><h4>Edwin Pinzón&nbsp;M.</h4><p>Auditorías y diagnóstico</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="transformacion" data-search="Juan David Gómez Gómez Análisis económico-laboral Transformación laboral">
+            <span class="dir-mono">JG</span>
+            <div class="dir-txt"><h4>Juan David Gómez&nbsp;G.</h4><p>Transformación laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="consultoria" data-search="Juliana Barrera Cabezas Consultoría laboral">
+            <span class="dir-mono">JB</span>
+            <div class="dir-txt"><h4>Juliana Barrera&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="consultoria transformacion" data-search="Juliana Jaramillo Gómez Consultoría laboral Optimización y planeación laboral estratégica">
+            <span class="dir-mono">JJ</span>
+            <div class="dir-txt"><h4>Juliana Jaramillo&nbsp;G.</h4><p>Consultoría laboral · Transformación laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="consultoria" data-search="Liseth Paola Luengas Consultoría laboral">
+            <span class="dir-mono">LL</span>
+            <div class="dir-txt"><h4>Liseth Luengas</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="consultoria" data-search="Mateo Atencia Canal Consultoría laboral">
+            <span class="dir-mono">MA</span>
+            <div class="dir-txt"><h4>Mateo Atencia&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="consultoria" data-search="Samuel Gaitán Consultoría laboral">
+            <span class="dir-mono">SG</span>
+            <div class="dir-txt"><h4>Samuel Gaitán</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="consultoria" data-search="Suhaida Santander Safa Consultoría laboral">
+            <span class="dir-mono">SS</span>
+            <div class="dir-txt"><h4>Suhaida Santander&nbsp;S.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="responsables" data-service="consultoria" data-search="Tatiana Meza Ramírez Consultoría laboral">
+            <span class="dir-mono">TM</span>
+            <div class="dir-txt"><h4>Tatiana Meza&nbsp;R.</h4><p>Consultoría laboral</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="team-group" data-group="equipo">
+        <h2 class="tg-title">Equipo <span class="tg-count">73</span></h2>
+        <div class="dir-grid">
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Adriana Carolina Sierra Rozo Consultoría laboral">
+            <span class="dir-mono">AS</span>
+            <div class="dir-txt"><h4>Adriana Sierra&nbsp;R.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Alejandra Baquero Escárraga Consultoría laboral">
+            <span class="dir-mono">AB</span>
+            <div class="dir-txt"><h4>Alejandra Baquero&nbsp;E.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Alejandro Páez Arias Consultoría laboral">
+            <span class="dir-mono">AP</span>
+            <div class="dir-txt"><h4>Alejandro Páez&nbsp;A.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Ana María Gutiérrez Jiménez Consultoría laboral">
+            <span class="dir-mono">AG</span>
+            <div class="dir-txt"><h4>Ana María Gutiérrez&nbsp;J.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Andrés Felipe Mejía Vidal Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">AM</span>
+            <div class="dir-txt"><h4>Andrés Mejía&nbsp;V.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Andrés David Méndez Reyes Consultoría laboral">
+            <span class="dir-mono">AM</span>
+            <div class="dir-txt"><h4>Andrés Méndez&nbsp;R.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion negociacion" data-search="Anyela Bibiana Parra Rodríguez Representación ante autoridades administrativas Negociación colectiva">
+            <span class="dir-mono">AP</span>
+            <div class="dir-txt"><h4>Anyela Parra&nbsp;R.</h4><p>Representación · Negociación colectiva</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Brigitte Alexandra Hernández Pinilla Consultoría laboral">
+            <span class="dir-mono">BH</span>
+            <div class="dir-txt"><h4>Brigitte Hernández&nbsp;P.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Carolina del Mar Guzmán Cabrera Consultoría laboral">
+            <span class="dir-mono">CG</span>
+            <div class="dir-txt"><h4>Carolina Guzmán&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Catalina Alejandra Castillo Torres Consultoría laboral">
+            <span class="dir-mono">CC</span>
+            <div class="dir-txt"><h4>Catalina Castillo&nbsp;T.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="César Mauricio Heredia Quecan Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">CH</span>
+            <div class="dir-txt"><h4>César Heredia&nbsp;Q.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Claudia Patricia Gutiérrez Guerrero Consultoría laboral">
+            <span class="dir-mono">CG</span>
+            <div class="dir-txt"><h4>Claudia Gutiérrez&nbsp;G.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Cristina Isabel González Cantillo Consultoría laboral">
+            <span class="dir-mono">CG</span>
+            <div class="dir-txt"><h4>Cristina González&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="negociacion" data-search="Daniel Felipe Malaver Cruz Negociación colectiva">
+            <span class="dir-mono">DM</span>
+            <div class="dir-txt"><h4>Daniel Malaver&nbsp;C.</h4><p>Negociación colectiva</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria transformacion" data-search="Daniel Ospina Carvajal Consultoría laboral Optimización y planeación laboral estratégica">
+            <span class="dir-mono">DO</span>
+            <div class="dir-txt"><h4>Daniel Ospina&nbsp;C.</h4><p>Consultoría laboral · Transformación laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Daniela Lucia Barros Ayazo Consultoría laboral">
+            <span class="dir-mono">DB</span>
+            <div class="dir-txt"><h4>Daniela Barros&nbsp;A.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Daniela Andrea Poveda Rodríguez Consultoría laboral">
+            <span class="dir-mono">DP</span>
+            <div class="dir-txt"><h4>Daniela Poveda&nbsp;R.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Daniela Villarreal Tuirán Consultoría laboral">
+            <span class="dir-mono">DV</span>
+            <div class="dir-txt"><h4>Daniela Villarreal&nbsp;T.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="negociacion" data-search="David Santiago Casas Gómez Negociación colectiva">
+            <span class="dir-mono">DC</span>
+            <div class="dir-txt"><h4>David Casas&nbsp;G.</h4><p>Negociación colectiva</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="David Nicolás Lozano León Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">DL</span>
+            <div class="dir-txt"><h4>David Lozano&nbsp;L.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Deysi Adriana Valderrama Torres Representación ante autoridades administrativas">
+            <span class="dir-mono">DV</span>
+            <div class="dir-txt"><h4>Deysi Valderrama&nbsp;T.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Diana Patricia Perico Bermúdez Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">DP</span>
+            <div class="dir-txt"><h4>Diana Perico&nbsp;B.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Diego Alexander Méndez Montilla Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">DM</span>
+            <div class="dir-txt"><h4>Diego Méndez&nbsp;M.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Gabriela Cubillos Manrique Representación ante autoridades administrativas">
+            <span class="dir-mono">GC</span>
+            <div class="dir-txt"><h4>Gabriela Cubillos&nbsp;M.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Hugo Andrés Muñoz Ávila Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">HM</span>
+            <div class="dir-txt"><h4>Hugo Muñoz&nbsp;Á.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Jesús David Ospina Gil Consultoría laboral">
+            <span class="dir-mono">JO</span>
+            <div class="dir-txt"><h4>Jesús Ospina&nbsp;G.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Jhonatan Cuaspa Damian Consultoría laboral">
+            <span class="dir-mono">JC</span>
+            <div class="dir-txt"><h4>Jhonatan Cuaspa&nbsp;D.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Johanna Gisell Salas Tupaz Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">JS</span>
+            <div class="dir-txt"><h4>Johanna Salas&nbsp;T.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Jorge Iván Vargas Rojas Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">JV</span>
+            <div class="dir-txt"><h4>Jorge Vargas&nbsp;R.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Juan Camilo Tábora Londoño Consultoría laboral">
+            <span class="dir-mono">JT</span>
+            <div class="dir-txt"><h4>Juan Camilo Tábora&nbsp;L.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Juan David Guarín Quiceno Representación ante autoridades administrativas">
+            <span class="dir-mono">JG</span>
+            <div class="dir-txt"><h4>Juan David Guarín&nbsp;Q.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Juan Nicolás Rivera Contreras Representación ante autoridades administrativas">
+            <span class="dir-mono">JR</span>
+            <div class="dir-txt"><h4>Juan Nicolás Rivera&nbsp;C.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Juan Pablo Díaz Sánchez Consultoría laboral">
+            <span class="dir-mono">JD</span>
+            <div class="dir-txt"><h4>Juan Pablo Díaz&nbsp;S.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Juan Pablo Parra González Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">JP</span>
+            <div class="dir-txt"><h4>Juan Pablo Parra&nbsp;G.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Juan Pablo Ramírez González Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">JR</span>
+            <div class="dir-txt"><h4>Juan Pablo Ramírez&nbsp;G.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Julián Hernando Gómez Rueda Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">JG</span>
+            <div class="dir-txt"><h4>Julián Gómez&nbsp;R.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Julian Rodolfo Vargas Berbeo Consultoría laboral">
+            <span class="dir-mono">JV</span>
+            <div class="dir-txt"><h4>Julian Vargas&nbsp;B.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="negociacion" data-search="Karen Andrea Montes Vega Negociación colectiva">
+            <span class="dir-mono">KM</span>
+            <div class="dir-txt"><h4>Karen Montes&nbsp;V.</h4><p>Negociación colectiva</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Laura Camila Rodríguez Cano Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">LR</span>
+            <div class="dir-txt"><h4>Laura Rodríguez&nbsp;C.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Leiddy Estefanía Cruz Camelo Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">LC</span>
+            <div class="dir-txt"><h4>Leiddy Cruz&nbsp;C.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Leydy Tatiana Sánchez Jiménez Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">LS</span>
+            <div class="dir-txt"><h4>Leydy Sánchez&nbsp;J.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Lina Margoth Salamanca Niño Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">LS</span>
+            <div class="dir-txt"><h4>Lina Salamanca&nbsp;N.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Lucelis Beatriz Vergel García Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">LV</span>
+            <div class="dir-txt"><h4>Lucelis Vergel&nbsp;G.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Lucía del Pilar Díaz Burgos Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">LD</span>
+            <div class="dir-txt"><h4>Lucía Díaz&nbsp;B.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Luz Angélica Cuervo Navarro Consultoría laboral">
+            <span class="dir-mono">LC</span>
+            <div class="dir-txt"><h4>Luz Angélica Cuervo&nbsp;N.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="auditorias" data-search="Maira Alejandra Arévalo Cárdenas Auditorías, diagnósticos y proyectos laborales a la medida">
+            <span class="dir-mono">MA</span>
+            <div class="dir-txt"><h4>Maira Arévalo&nbsp;C.</h4><p>Auditorías y diagnóstico</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Manuela Dorronsoro Samper Consultoría laboral">
+            <span class="dir-mono">MD</span>
+            <div class="dir-txt"><h4>Manuela Dorronsoro&nbsp;S.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Manuela Vásquez Naranjo Consultoría laboral">
+            <span class="dir-mono">MV</span>
+            <div class="dir-txt"><h4>Manuela Vásquez&nbsp;N.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="María Camila Flórez Contreras Asesoría migratoria">
+            <span class="dir-mono">MF</span>
+            <div class="dir-txt"><h4>María Camila Flórez&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="María Carolina Lozano Cárdenas Consultoría laboral">
+            <span class="dir-mono">ML</span>
+            <div class="dir-txt"><h4>María Carolina Lozano&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="María Elizabeth Espinel Perlaza Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">ME</span>
+            <div class="dir-txt"><h4>María Elizabeth Espinel&nbsp;P.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="María Paula Moreno Cárdenas Consultoría laboral">
+            <span class="dir-mono">MM</span>
+            <div class="dir-txt"><h4>María Paula Moreno&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Mónica María Niño Galvis Consultoría laboral">
+            <span class="dir-mono">MN</span>
+            <div class="dir-txt"><h4>Mónica Niño&nbsp;G.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Mónica Andrea Pardo Clavijo Representación ante autoridades administrativas">
+            <span class="dir-mono">MP</span>
+            <div class="dir-txt"><h4>Mónica Pardo&nbsp;C.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Nancy Andrea Quiroga Rojas Consultoría laboral">
+            <span class="dir-mono">NQ</span>
+            <div class="dir-txt"><h4>Nancy Quiroga&nbsp;R.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Natalia Duque Rugeles Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">ND</span>
+            <div class="dir-txt"><h4>Natalia Duque&nbsp;R.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Natalia Martínez Ramos Consultoría laboral">
+            <span class="dir-mono">NM</span>
+            <div class="dir-txt"><h4>Natalia Martínez&nbsp;R.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Natalia Pulido Cabrera Consultoría laboral">
+            <span class="dir-mono">NP</span>
+            <div class="dir-txt"><h4>Natalia Pulido&nbsp;C.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Pablo Bermúdez Montoya Consultoría laboral">
+            <span class="dir-mono">PB</span>
+            <div class="dir-txt"><h4>Pablo Bermúdez&nbsp;M.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Pablo Martín Quiñones Bulla Asesoría migratoria">
+            <span class="dir-mono">PQ</span>
+            <div class="dir-txt"><h4>Pablo Quiñones&nbsp;B.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="auditorias" data-search="Paola Catalina Ávila Puerto Auditorías, diagnósticos y proyectos laborales a la medida">
+            <span class="dir-mono">PÁ</span>
+            <div class="dir-txt"><h4>Paola Ávila&nbsp;P.</h4><p>Auditorías y diagnóstico</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Paula Andrea Ardila Ruiz Consultoría laboral">
+            <span class="dir-mono">PA</span>
+            <div class="dir-txt"><h4>Paula Ardila&nbsp;R.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Paula Jimena Restrepo Guío Consultoría laboral">
+            <span class="dir-mono">PR</span>
+            <div class="dir-txt"><h4>Paula Restrepo&nbsp;G.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Pedro Pablo Lozada Prieto Consultoría laboral">
+            <span class="dir-mono">PL</span>
+            <div class="dir-txt"><h4>Pedro Lozada&nbsp;P.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Ricardo León Castañeda Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">RC</span>
+            <div class="dir-txt"><h4>Ricardo León Castañeda</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Santiago Cadena Mantilla Consultoría laboral">
+            <span class="dir-mono">SC</span>
+            <div class="dir-txt"><h4>Santiago Cadena&nbsp;M.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Sergio Gerardo Estrada González Consultoría laboral">
+            <span class="dir-mono">SE</span>
+            <div class="dir-txt"><h4>Sergio Estrada&nbsp;G.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Stefanny Gil Herrera Asesoría migratoria">
+            <span class="dir-mono">SG</span>
+            <div class="dir-txt"><h4>Stefanny Gil&nbsp;H.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Tatiana María Lozano Estupiñán Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">TL</span>
+            <div class="dir-txt"><h4>Tatiana Lozano&nbsp;E.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Virgilio Guerrero Morales Consultoría laboral">
+            <span class="dir-mono">VG</span>
+            <div class="dir-txt"><h4>Virgilio Guerrero&nbsp;M.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="consultoria" data-search="Viviana Marcela Contreras Méndez Consultoría laboral">
+            <span class="dir-mono">VC</span>
+            <div class="dir-txt"><h4>Viviana Contreras&nbsp;M.</h4><p>Consultoría laboral</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Viviana Margarita Pimienta Quintero Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">VP</span>
+            <div class="dir-txt"><h4>Viviana Pimienta&nbsp;Q.</h4><p>Representación</p></div>
+          </div>
+          <div class="dir-item" data-area="equipo" data-service="representacion" data-search="Wilson Vargas Castillo Representación ante autoridades judiciales y constitucionales">
+            <span class="dir-mono">WV</span>
+            <div class="dir-txt"><h4>Wilson Vargas&nbsp;C.</h4><p>Representación</p></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <p class="no-match" id="nomatch">No encontramos resultados. Intente con otro nombre o especialidad.</p>
     </div>
   </section>
 
@@ -146,6 +565,6 @@
   </div>
 </footer>
 
-<script src="js/la.js?v=22"></script>
+<script src="js/la.js?v=23"></script>
 </body>
 </html>
