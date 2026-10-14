@@ -384,11 +384,7 @@ h1,h2,h3,h4{
   transition:transform .4s var(--ease), background-color .4s var(--ease);
 }
 /* Zigzag sutil: cada paso se desplaza un poco para romper la rigidez de la lista */
-.pillar:nth-child(2){transform:translateX(14px);}
-.pillar:nth-child(3){transform:translateX(28px);}
 .pillar:hover{background:var(--paper); transform:translateX(8px) scale(1.015);}
-.pillar:nth-child(2):hover{transform:translateX(22px) scale(1.015);}
-.pillar:nth-child(3):hover{transform:translateX(36px) scale(1.015);}
 
 /* Gran número fantasma detrás del texto */
 .pillar .ghost{
@@ -428,8 +424,6 @@ h1,h2,h3,h4{
   .intro .say{padding:52px 32px;}
   .pillars{padding:44px 24px 44px 40px;}
   .pillars::before{left:24px;}
-  .pillar:nth-child(2),.pillar:nth-child(3),
-  .pillar:nth-child(2):hover,.pillar:nth-child(3):hover{transform:none;}
   .pillar:hover{transform:translateX(6px) scale(1.01);}
   .pillar .ghost{display:none;}
 }
