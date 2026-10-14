@@ -1680,3 +1680,145 @@ form .btn{margin-top:24px;}
   .nav{align-items:flex-start;}
   .site-head:has(.nav.open) .burger span{background:#fff;}
 }
+
+/* =========================================================
+   Menú desplegable sin numeración
+   ========================================================= */
+.submenu .n{display:none;}
+.site-head .nav .submenu a{padding:12px 16px;}
+.site-head .nav .submenu a.sub{padding-left:34px; display:flex; align-items:center; gap:12px;}
+.site-head .nav .submenu a.sub::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--orange); flex-shrink:0;}
+@media (max-width:1000px){
+  .site-head .nav .submenu a.sub{padding-left:22px;}
+}
+
+/* =========================================================
+   Páginas de servicio — rediseño
+   ========================================================= */
+.bg-white{background:#fff;}
+.bg-tint{background:var(--paper);}
+.bg-navy{position:relative; overflow:hidden; background:var(--navy-950); color:#fff;}
+.bg-navy::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(circle at 92% 0%, rgba(242,96,33,.22), transparent 44%), radial-gradient(circle at 0% 100%, rgba(242,96,33,.1), transparent 42%);
+}
+.bg-navy > .wrap{position:relative; z-index:1;}
+.sv-sec{padding:92px 0;}
+.sv-head{margin-bottom:44px; max-width:780px;}
+.sv-head h2{font-size:clamp(30px,3.2vw,44px); line-height:1.12; letter-spacing:-.02em; color:var(--ink);}
+.sv-head p{margin-top:16px; font-size:18px; line-height:1.6; color:var(--slate);}
+.sv-head p.serif{font-family:var(--serif); font-size:clamp(20px,2vw,26px); color:var(--ink);}
+.sv-head.light h2{color:#fff;}
+.sv-head.light p{color:rgba(255,255,255,.82);}
+
+/* Cabecera partida con foto */
+.sv-hero{position:relative; overflow:hidden; background:var(--navy-950); color:#fff; padding:158px 0 150px;}
+.sv-hero::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(circle at 88% 12%, rgba(242,96,33,.3), transparent 46%), radial-gradient(circle at 0% 100%, rgba(242,96,33,.1), transparent 40%);
+}
+.sv-hero-grid{position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); gap:76px; align-items:center;}
+.sv-text .crumbs{font-size:13.5px; color:rgba(255,255,255,.68); margin-bottom:24px;}
+.sv-text .crumbs a{color:rgba(255,255,255,.68);}
+.sv-text .crumbs a:hover{color:var(--orange);}
+.sv-text h1{font-family:var(--serif); color:#fff; font-size:clamp(34px,4.1vw,56px); line-height:1.08; letter-spacing:-.02em; margin-bottom:22px; max-width:none;}
+.sv-text .sub{font-size:19px; line-height:1.65; color:rgba(255,255,255,.84); max-width:48ch;}
+.sv-text .btn{margin-top:34px;}
+.sv-visual{position:relative; justify-self:end; width:100%; max-width:520px;}
+.sv-visual::before{content:""; position:absolute; inset:22px -22px -22px 22px; border:2px solid var(--orange); border-radius:var(--iso-curve); z-index:0;}
+.sv-visual .frame{position:relative; z-index:1; aspect-ratio:4/3.35; border-radius:var(--iso-curve); overflow:hidden; box-shadow:0 44px 80px -36px rgba(0,0,0,.85);}
+.sv-visual .frame img{width:100%; height:100%; object-fit:cover; display:block;}
+.sv-visual .frame::after{content:""; position:absolute; inset:0; background:linear-gradient(160deg, rgba(24,30,73,.28), rgba(12,16,38,.5));}
+
+/* Diferencial: tarjeta que flota entre la cabecera y el texto */
+.sv-dif-wrap{position:relative; z-index:6; margin-top:-78px;}
+.sv-dif{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:40px; align-items:center;
+  padding:40px 50px; background:#fff; border-radius:var(--iso-curve); border-left:7px solid var(--orange);
+  box-shadow:0 44px 80px -38px rgba(12,16,38,.6);
+}
+.sv-dif .lab{
+  font-size:12.5px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--orange);
+  padding-right:40px; border-right:1px solid var(--line); white-space:nowrap;
+}
+.sv-dif p{font-family:var(--serif); font-size:clamp(20px,1.95vw,26px); line-height:1.45; color:var(--ink); margin:0;}
+
+/* Introducción */
+.sv-intro{padding:92px 0 88px;}
+.sv-intro-grid{display:grid; grid-template-columns:minmax(0,1fr) 350px; gap:76px; align-items:start;}
+.sv-desc{
+  font-size:clamp(19px,1.6vw,22px); line-height:1.8; color:var(--ink);
+  padding-left:28px; border-left:4px solid var(--orange); margin:0;
+}
+.sv-intro .svc-aside{position:sticky; top:112px;}
+
+/* Qué hacemos / Impacto: lista editorial */
+.sv-list-grid{display:grid; grid-template-columns:340px minmax(0,1fr); gap:80px; align-items:start;}
+.sv-list-head{position:sticky; top:118px;}
+.sv-list-head h2{font-size:clamp(32px,3.4vw,46px); line-height:1.1; letter-spacing:-.02em; color:var(--ink);}
+.sv-list-head h2::after{content:""; display:block; width:64px; height:4px; margin-top:22px; background:var(--orange);}
+.sv-rows{list-style:none; margin:0; padding:0; border-top:1px solid rgba(24,30,73,.14);}
+.sv-row{
+  display:flex; align-items:flex-start; gap:22px; padding:26px 8px; border-bottom:1px solid rgba(24,30,73,.14);
+  transition:transform .35s var(--ease), background-color .35s var(--ease);
+}
+.sv-row:hover{transform:translateX(8px);}
+.sv-row .ic{
+  flex:0 0 38px; height:38px; border-radius:50%; background:var(--orange-050); color:var(--orange-700);
+  display:flex; align-items:center; justify-content:center; transition:.35s var(--ease);
+}
+.sv-row .ic svg{width:19px; height:19px;}
+.sv-row:hover .ic{background:var(--orange); color:#fff;}
+.sv-row p{margin:4px 0 0; font-size:clamp(18px,1.5vw,20.5px); line-height:1.5; color:var(--ink); font-weight:500;}
+
+/* Cuándo acudir: sección oscura */
+.sv-when .when-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:20px;}
+.wc{
+  position:relative; overflow:hidden; padding:38px 32px 40px; min-height:230px; border-radius:var(--iso-curve);
+  border:1px solid rgba(255,255,255,.18); background:linear-gradient(160deg, rgba(255,255,255,.11), rgba(255,255,255,.03));
+  transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+}
+.wc::before{content:""; position:absolute; left:0; top:0; width:100%; height:4px; background:var(--orange); transform:scaleX(0); transform-origin:left; transition:transform .45s var(--ease);}
+.wc:hover{transform:translateY(-8px); border-color:rgba(242,96,33,.55); box-shadow:0 34px 56px -30px rgba(0,0,0,.8);}
+.wc:hover::before{transform:scaleX(1);}
+.wc b{display:block; font-family:var(--serif); font-size:60px; line-height:1; color:var(--orange); margin-bottom:22px; letter-spacing:-.02em;}
+.wc p{margin:0; font-size:clamp(18px,1.5vw,20px); line-height:1.5; color:rgba(255,255,255,.95);}
+
+/* Profesionales en versión clara */
+.svc-pros.light{padding:92px 0 96px; color:var(--ink);}
+.svc-pros.light::before{display:none;}
+.svc-pros.light.bg-white{background:#fff;}
+.svc-pros.light.bg-tint{background:var(--paper);}
+.svc-pros.light .lead-in h2{color:var(--ink);}
+.svc-pros.light .lead-in p{color:var(--slate);}
+.svc-pros.light .svc-leads{border-top:1px solid rgba(24,30,73,.14);}
+.svc-pros.light .svc-leads h3{color:var(--ink);}
+.svc-pros.light .lead-chip{color:var(--ink); background:#fff; border-color:rgba(24,30,73,.18);}
+.svc-pros.light.bg-white .lead-chip{background:var(--paper);}
+
+.svc-others.bg-tint{background:var(--paper);}
+.svc-others.bg-white{background:#fff;}
+.sv-others .sv-head{margin-bottom:38px;}
+
+/* Extras sobre el nuevo sistema de fondos */
+.sv-sec.svc-stats,.sv-sec.svc-why{padding:96px 0;}
+.sv-sec.svc-steps .sv-head{max-width:880px;}
+.sv-sec.sv-areas .area-card{box-shadow:0 20px 40px -32px rgba(18,22,46,.45);}
+.sv-subs .sub-cards{margin-top:0;}
+
+@media (max-width:1000px){
+  .sv-hero{padding:130px 0 120px;}
+  .sv-hero-grid{grid-template-columns:1fr; gap:64px;}
+  .sv-visual{justify-self:start; max-width:460px;}
+  .sv-dif{grid-template-columns:1fr; gap:16px; padding:32px 30px;}
+  .sv-dif .lab{border-right:0; padding-right:0;}
+  .sv-intro-grid{grid-template-columns:1fr; gap:48px;}
+  .sv-intro .svc-aside{position:static;}
+  .sv-list-grid{grid-template-columns:1fr; gap:34px;}
+  .sv-list-head{position:static;}
+}
+@media (max-width:640px){
+  .sv-sec{padding:68px 0;}
+  .sv-row{gap:16px; padding:20px 4px;}
+  .wc{min-height:0;}
+}
