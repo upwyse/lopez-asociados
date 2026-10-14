@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initMosaic();
   initPeopleFilter();
+  initPostsFilter();
   initForm();
 });
 
@@ -332,4 +333,45 @@ const initForm = () => {
     form.reset();
     window.setTimeout(() => sent && sent.classList.remove('show'), 8000);
   });
+};
+
+
+/* Novedades: buscador + filtro por tipo (noticias / boletines), sin distinguir tildes */
+const initPostsFilter = () => {
+  const grid = document.getElementById('posts');
+  if (!grid) return;
+
+  const input = document.getElementById('postFinder');
+  const chips = document.getElementById('postChips');
+  const empty = document.getElementById('postsEmpty');
+  const count = document.getElementById('postCount');
+  const norm = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  let type = 'all';
+
+  const apply = () => {
+    const q = norm((input ? input.value : '').trim());
+    let shown = 0;
+    grid.querySelectorAll('.post').forEach((post) => {
+      const okType = type === 'all' || post.dataset.type === type;
+      const okText = !q || norm(post.dataset.search || '').includes(q);
+      const show = okType && okText;
+      post.classList.toggle('hidden', !show);
+      if (show) shown += 1;
+    });
+    if (count) count.textContent = shown === 1 ? '1 publicación' : shown + ' publicaciones';
+    if (empty) empty.classList.toggle('show', shown === 0);
+  };
+
+  if (input) input.addEventListener('input', apply);
+  if (chips) {
+    chips.querySelectorAll('button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        chips.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+        type = btn.dataset.type;
+        apply();
+      });
+    });
+  }
+  apply();
 };

@@ -1460,3 +1460,20 @@ form .btn{margin-top:24px;}
 .people-tools .finder{flex:1 1 270px; min-width:240px; max-width:300px;}
 .prof-detail .body > .prof-facts:first-child{margin-top:0;}
 @media (max-width:640px){ .site-head .brand img,.site-head.solid .brand img{height:38px;} }
+
+/* ---------------------------------------------------------
+   Novedades: buscador, filtros y etiqueta de tipo
+   --------------------------------------------------------- */
+.posts-tools{margin-bottom:42px; align-items:center;}
+.results-count{margin-left:auto; font-size:14px; color:var(--slate); font-weight:500;}
+.post{position:relative;}
+.post.hidden{display:none;}
+.post .pic{position:relative;}
+.post-tag{
+  position:absolute; left:16px; top:16px; z-index:2;
+  font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#fff;
+  padding:7px 13px; border-radius:var(--iso-curve-sm); background:var(--navy-950);
+  box-shadow:0 10px 20px -10px rgba(0,0,0,.6);
+}
+.post-tag.boletin{background:var(--orange);}
+@media (max-width:760px){ .results-count{margin-left:0; width:100%;} }

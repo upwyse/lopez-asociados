@@ -6,15 +6,15 @@
 <title>Novedades | López &amp; Asociados</title>
 <meta name="description" content="Tendencias, artículos y boletines sobre derecho laboral.">
 <link rel="icon" href="assets/img/favicon.png" type="image/png">
-<link rel="stylesheet" href="css/la.css?v=61">
+<link rel="stylesheet" href="css/la.css?v=62">
 </head>
 <body>
 
 <header class="site-head" id="head">
   <div class="bar">
     <a href="index.html" class="brand">
-      <img class="on-dark" src="assets/img/logo-white.svg" alt="López &amp; Asociados">
-      <img class="on-light" src="assets/img/logo-black.svg" alt="López &amp; Asociados">
+      <img class="on-dark" src="assets/img/logo-triangulos-blanco.svg" alt="López &amp; Asociados">
+      <img class="on-light" src="assets/img/logo-triangulos-negro.svg" alt="López &amp; Asociados">
     </a>
     <nav class="nav" id="nav">
       <a href="la-servicios.html">Servicios</a>
@@ -39,50 +39,63 @@
 
   <section class="band">
     <div class="wrap">
-      <div class="posts enter">
-        <a class="post" href="#">
-          <div class="pic"><img src="assets/img/team-meeting.jpg" alt=""></div>
+      <div class="people-tools posts-tools">
+        <div class="finder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="postFinder" placeholder="Buscar noticias y boletines" aria-label="Buscar en novedades">
+        </div>
+        <div class="chips" id="postChips">
+          <button data-type="all" aria-pressed="true">Todos</button>
+          <button data-type="noticia" aria-pressed="false">Noticias</button>
+          <button data-type="boletin" aria-pressed="false">Boletines</button>
+        </div>
+        <p class="results-count" id="postCount" aria-live="polite"></p>
+      </div>
+      <div class="posts enter" id="posts">
+        <a class="post" href="#" data-type="boletin" data-search="Proposiciones Tercer Debate Reforma Laboral por temáticas Análisis de las ponencias presentadas ante la Comisión Cuarta del Senado de la República para el tercer debate de la reforma laboral. Boletín">
+          <div class="pic"><img src="assets/img/team-meeting.jpg" alt=""><span class="post-tag boletin">Boletín</span></div>
           <div class="txt">
             <h3>Proposiciones Tercer Debate Reforma Laboral por temáticas</h3>
             <p>Análisis de las ponencias presentadas ante la Comisión Cuarta del Senado de la República para el tercer debate de la reforma laboral.</p>
           </div>
         </a>
-        <a class="post" href="#">
-          <div class="pic"><img src="assets/img/about-office.jpg" alt=""></div>
+        <a class="post" href="#" data-type="noticia" data-search="Consulta Popular 2.0 El panorama político y legislativo pone sobre la mesa las alternativas para que el Gobierno logre la Reforma Laboral pretendida. Noticia">
+          <div class="pic"><img src="assets/img/about-office.jpg" alt=""><span class="post-tag noticia">Noticia</span></div>
           <div class="txt">
             <h3>Consulta Popular 2.0</h3>
             <p>El panorama político y legislativo pone sobre la mesa las alternativas para que el Gobierno logre la Reforma Laboral pretendida.</p>
           </div>
         </a>
-        <a class="post" href="#">
-          <div class="pic"><img src="assets/img/hero-servicios.jpg" alt=""></div>
+        <a class="post" href="#" data-type="boletin" data-search="Nueva regulación a la práctica de evaluaciones médicas ocupacionales Normativa que regula frecuencia, costos y responsabilidades en el marco del SG-SST. Boletín">
+          <div class="pic"><img src="assets/img/hero-servicios.jpg" alt=""><span class="post-tag boletin">Boletín</span></div>
           <div class="txt">
             <h3>Nueva regulación a la práctica de evaluaciones médicas ocupacionales</h3>
             <p>Normativa que regula frecuencia, costos y responsabilidades en el marco del SG-SST.</p>
           </div>
         </a>
-        <a class="post" href="#">
-          <div class="pic"><img src="assets/img/svc-negociacion.jpg" alt=""></div>
+        <a class="post" href="#" data-type="noticia" data-search="Derecho colectivo del trabajo Claves para entender la negociación colectiva y el relacionamiento sindical. Noticia">
+          <div class="pic"><img src="assets/img/svc-negociacion.jpg" alt=""><span class="post-tag noticia">Noticia</span></div>
           <div class="txt">
             <h3>Derecho colectivo del trabajo</h3>
             <p>Claves para entender la negociación colectiva y el relacionamiento sindical.</p>
           </div>
         </a>
-        <a class="post" href="#">
-          <div class="pic"><img src="assets/img/svc-auditorias.jpg" alt=""></div>
+        <a class="post" href="#" data-type="noticia" data-search="Cumplimiento y ESG Buenas prácticas de debida diligencia y sostenibilidad en la gestión laboral. Noticia">
+          <div class="pic"><img src="assets/img/svc-auditorias.jpg" alt=""><span class="post-tag noticia">Noticia</span></div>
           <div class="txt">
             <h3>Cumplimiento y ESG</h3>
             <p>Buenas prácticas de debida diligencia y sostenibilidad en la gestión laboral.</p>
           </div>
         </a>
-        <a class="post" href="#">
-          <div class="pic"><img src="assets/img/svc-capacitaciones.jpg" alt=""></div>
+        <a class="post" href="#" data-type="noticia" data-search="Seguridad y salud en el trabajo Actualizaciones en el SG-SST y su implicación para los empleadores. Noticia">
+          <div class="pic"><img src="assets/img/svc-capacitaciones.jpg" alt=""><span class="post-tag noticia">Noticia</span></div>
           <div class="txt">
             <h3>Seguridad y salud en el trabajo</h3>
             <p>Actualizaciones en el SG-SST y su implicación para los empleadores.</p>
           </div>
         </a>
       </div>
+      <p class="no-match" id="postsEmpty">No encontramos publicaciones. Intente con otras palabras o cambie el filtro.</p>
     </div>
   </section>
 
@@ -92,7 +105,7 @@
   <div class="wrap">
         <div class="foot-grid">
       <div>
-        <img src="assets/img/logo-white.svg" alt="López &amp; Asociados">
+        <img src="assets/img/logo-triangulos-blanco.svg" alt="López &amp; Asociados">
         <p>Firma dedicada a la práctica del derecho laboral y de la seguridad social, con énfasis en la asesoría y representación de empresas.</p>
       </div>
       <div>
@@ -119,6 +132,6 @@
   </div>
 </footer>
 
-<script src="js/la.js?v=23"></script>
+<script src="js/la.js?v=24"></script>
 </body>
 </html>
