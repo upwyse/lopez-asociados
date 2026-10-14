@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 const initHeroSlider = () => {
   const root = document.getElementById('heroSlider');
   const nav = document.getElementById('heroNav');
-  if (!root || !nav) return;
+  if (!root) return;
 
   const slides = [...root.querySelectorAll('.slide')];
-  const dots = [...nav.querySelectorAll('#heroDots button')];
+  const dots = nav ? [...nav.querySelectorAll('#heroDots button')] : [];
   const prevBtn = document.getElementById('heroPrev');
   const nextBtn = document.getElementById('heroNext');
   if (slides.length < 2) return;
@@ -36,10 +36,10 @@ const initHeroSlider = () => {
     const target = (next + slides.length) % slides.length;
     if (target === index) return;
     slides[index].classList.remove('active');
-    dots[index].classList.remove('active');
+    if (dots[index]) dots[index].classList.remove('active');
     index = target;
     slides[index].classList.add('active');
-    dots[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
 
     // El video de la primera diapositiva retoma desde el inicio al volver a verse
     const vid = slides[index].querySelector('video');

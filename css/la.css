@@ -220,12 +220,12 @@ h1,h2,h3,h4{
 .hero .wrap{position:relative;}
 /* Cifras del hero: card grande de cristal, con filo naranja y barras de avance */
 .figures{
-  position:absolute; right:0; bottom:118px; z-index:3;
-  width:min(470px, 46vw);
+  position:absolute; right:0; bottom:72px; z-index:3;
+  width:min(400px, 42vw);
 }
 .figures .card{
   position:relative; overflow:hidden;
-  padding:36px 38px 30px;
+  padding:31px 32px 26px;
   border-radius:var(--iso-curve);
   background:linear-gradient(155deg, rgba(255,255,255,.16), rgba(255,255,255,.05));
   border:1px solid rgba(255,255,255,.3);
@@ -233,25 +233,21 @@ h1,h2,h3,h4{
   box-shadow:0 40px 80px -34px rgba(0,0,0,.75);
 }
 .figures .card::before{
-  content:""; position:absolute; left:0; top:0; right:0; height:5px;
+  content:""; position:absolute; left:0; top:0; right:0; height:4px;
   background:linear-gradient(90deg, var(--orange), rgba(242,96,33,.15));
 }
 .figures .card::after{
-  content:""; position:absolute; right:-70px; top:-70px; width:240px; height:240px;
+  content:""; position:absolute; right:-60px; top:-60px; width:204px; height:204px;
   background:radial-gradient(circle, rgba(242,96,33,.38), transparent 68%);
   pointer-events:none;
 }
 .figures .eyebrow-mini{
   position:relative; z-index:1;
-  display:flex; align-items:center; gap:10px; margin-bottom:20px;
-  font-size:12.5px; font-weight:700; letter-spacing:.22em; color:rgba(255,255,255,.85);
-}
-.figures .eyebrow-mini::before{
-  content:""; width:10px; height:10px; background:var(--orange);
-  border-radius:var(--iso-curve-sm); flex-shrink:0;
+  display:flex; align-items:center; gap:10px; margin-bottom:17px;
+  font-size:11px; font-weight:700; letter-spacing:.22em; color:rgba(255,255,255,.85);
 }
 
-.figures .viewport{position:relative; z-index:1; height:190px;}
+.figures .viewport{position:relative; z-index:1; height:162px;}
 .figures .fig{
   position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center;
   opacity:0; transform:translateY(24px);
@@ -261,22 +257,22 @@ h1,h2,h3,h4{
 .figures .fig.on{opacity:1; transform:translateY(0); pointer-events:auto;}
 .figures .fig.out{opacity:0; transform:translateY(-24px);}
 .figures .fig b{
-  display:block; font-family:var(--serif); font-size:clamp(64px,6.6vw,92px);
+  display:block; font-family:var(--serif); font-size:clamp(54px,5.6vw,78px);
   color:#fff; font-weight:700; line-height:1; letter-spacing:-.035em;
 }
 .figures .fig span{
-  display:block; color:rgba(255,255,255,.9); font-size:18px; font-weight:500;
-  margin-top:14px; line-height:1.45; max-width:30ch;
+  display:block; color:rgba(255,255,255,.9); font-size:15.5px; font-weight:500;
+  margin-top:12px; line-height:1.45; max-width:30ch;
 }
 /* Variante de frase (sin cifra): título serif grande */
 .figures .fig.txt b{
-  font-size:clamp(30px,3vw,40px); line-height:1.14; letter-spacing:-.02em; max-width:15ch;
+  font-size:clamp(26px,2.55vw,34px); line-height:1.14; letter-spacing:-.02em; max-width:15ch;
 }
-.figures .fig.txt span{font-size:16px; margin-top:16px; max-width:34ch;}
+.figures .fig.txt span{font-size:14px; margin-top:14px; max-width:34ch;}
 
-.figures .bars{position:relative; z-index:1; display:flex; gap:7px; margin-top:24px;}
+.figures .bars{position:relative; z-index:1; display:flex; gap:6px; margin-top:20px;}
 .figures .bars button{
-  flex:1; height:4px; padding:0; border:0; cursor:pointer;
+  flex:1; height:3px; padding:0; border:0; cursor:pointer;
   background:rgba(255,255,255,.25); position:relative; overflow:hidden;
 }
 .figures .bars button::after{
@@ -296,7 +292,7 @@ h1,h2,h3,h4{
 @media (max-width:900px){
   .figures{position:static; width:100%; margin-top:40px;}
   .figures .card{padding:28px 26px 24px;}
-  .figures .viewport{height:200px;}
+  .figures .viewport{height:176px;}
 }
 @media (max-width:420px){
   .figures .fig b{font-size:54px;}
