@@ -1342,3 +1342,56 @@ form .btn{margin-top:24px;}
 .pro-card.on-light .pro-info h3{margin-bottom:22px; font-size:clamp(24px,2.2vw,31px);}
 .pro-card.on-light:hover{box-shadow:0 40px 60px -30px rgba(12,16,38,.8);}
 .pro-card.on-light .pro-info h3{text-wrap:balance;}
+
+/* ---------------------------------------------------------
+   Equipo: cargo dentro de la tarjeta
+   --------------------------------------------------------- */
+.pro-card.on-light .pro-info h3{margin-bottom:10px;}
+.pro-card.on-light .pro-info p{margin-bottom:20px;}
+
+/* ---------------------------------------------------------
+   Página individual de profesional
+   --------------------------------------------------------- */
+.prof-hero{padding:164px 0 84px;}
+.prof-grid{display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:72px; align-items:center;}
+.prof-grid::before{
+  content:""; position:absolute; right:-140px; top:-190px; width:560px; height:560px; z-index:-1; pointer-events:none;
+  background:radial-gradient(circle, rgba(242,96,33,.3), transparent 66%);
+}
+.prof-hero .ph-tag{display:inline-block; margin-bottom:18px;}
+.prof-hero h1{margin-bottom:0;}
+.prof-hero .sub{margin-top:18px; font-size:19px; max-width:38ch;}
+.prof-hero .btn{margin-top:30px;}
+.ph-photo{position:relative; justify-self:end; width:100%; max-width:340px;}
+.ph-photo::before{
+  content:""; position:absolute; inset:20px -20px -20px 20px; border:2px solid var(--orange);
+  border-radius:var(--iso-curve); z-index:0;
+}
+.ph-photo img{
+  position:relative; z-index:1; display:block; width:100%; aspect-ratio:4/4.7; object-fit:cover;
+  border-radius:var(--iso-curve); box-shadow:0 40px 70px -34px rgba(0,0,0,.75);
+}
+
+.prof-detail{padding:84px 0 80px;}
+.prof-facts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:38px 0 0;}
+.prof-facts > div{
+  padding:20px 22px; background:#fff; border:1px solid var(--line); border-radius:var(--iso-curve-sm);
+  transition:border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.prof-facts > div:hover{border-color:var(--orange); box-shadow:0 20px 36px -28px rgba(18,22,46,.4);}
+.prof-facts dt{
+  font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); margin-bottom:8px;
+}
+.prof-facts dd{margin:0; font-size:16px; line-height:1.45; color:var(--ink); font-weight:500; overflow-wrap:anywhere;}
+.prof-facts dd a{color:var(--ink); border-bottom:1px solid var(--line);}
+.prof-facts dd a:hover{color:var(--orange); border-color:var(--orange);}
+
+.svc-tiles.few{grid-template-columns:repeat(3,minmax(0,1fr));}
+.svc-tiles.few .svc-tile{height:300px;}
+.svc-tiles.few .st-cap h3{font-size:23px;}
+
+@media (max-width:980px){
+  .prof-grid{grid-template-columns:1fr; gap:56px;}
+  .ph-photo{justify-self:start; max-width:300px;}
+}
+@media (max-width:700px){ .svc-tiles.few{grid-template-columns:1fr;} .prof-facts{grid-template-columns:1fr;} }
