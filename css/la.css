@@ -560,20 +560,12 @@ h1,h2,h3,h4{
 .award:hover{transform:translateY(-10px);}
 .award:nth-child(even):hover{transform:translateY(12px);}
 
-.award .rank{
-  position:absolute; top:22px; right:26px; z-index:2;
-  font-family:var(--serif); font-size:13px; font-weight:700; color:var(--line);
-  transition:color .35s var(--ease);
-}
-.award:hover .rank{color:var(--orange);}
 
 .award .logo{
   position:relative; height:184px; display:flex; align-items:center; justify-content:center;
-  background:var(--paper); border-radius:var(--iso-curve-sm); margin-bottom:24px;
-  transition:background-color .4s var(--ease);
+  background:transparent; border-radius:var(--iso-curve-sm); margin-bottom:24px;
 }
 .award .logo img{max-height:118px; max-width:76%; width:auto; transition:transform .5s var(--ease);}
-.award:hover .logo{background:var(--orange-050);}
 .award:hover .logo img{transform:scale(1.07);}
 /* Filo que se dibuja bajo la placa del logo al pasar el mouse */
 .award .logo::after{
