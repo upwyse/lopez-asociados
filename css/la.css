@@ -1057,3 +1057,43 @@ form .btn{margin-top:24px;}
   .gallery.gallery-lg .g-item{flex:0 0 280px; height:400px;}
   .gallery.gallery-lg .cap h3{font-size:21px;}
 }
+
+/* ---------------------------------------------------------
+   Franja general del equipo (sin mostrar a los socios)
+   --------------------------------------------------------- */
+.team-strip{
+  position:relative; overflow:hidden; background:var(--navy-950); color:#fff; padding:56px 0;
+}
+.team-strip::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(242,96,33,.22), transparent 46%),
+    radial-gradient(circle at 100% 100%, rgba(242,96,33,.12), transparent 40%);
+}
+.team-strip::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:4px;
+  background:linear-gradient(90deg, var(--orange), rgba(242,96,33,0) 70%);
+}
+.team-strip .wrap{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:minmax(0,1.5fr) auto; gap:56px; align-items:center;
+}
+.team-strip h2{color:#fff; font-size:clamp(26px,2.9vw,38px); line-height:1.15; letter-spacing:-.02em; max-width:27ch;}
+.team-strip h2 em{font-style:normal; color:var(--orange);}
+.team-strip .ts-main p{margin-top:16px; font-size:18px; line-height:1.6; max-width:50ch; color:rgba(255,255,255,.78);}
+.team-strip .ts-side{display:flex; align-items:center; gap:36px;}
+.team-strip .ts-stat{padding-right:36px; border-right:1px solid rgba(255,255,255,.22);}
+.team-strip .ts-stat b{
+  display:block; font-family:var(--serif); font-size:clamp(48px,4.6vw,64px);
+  line-height:1; font-weight:700; letter-spacing:-.03em;
+}
+.team-strip .ts-stat span{display:block; margin-top:8px; font-size:15px; color:rgba(255,255,255,.8); max-width:14ch; line-height:1.35;}
+.team-strip .btn svg{width:18px; height:18px; margin-left:8px; vertical-align:-3px;}
+@media (max-width:900px){
+  .team-strip{padding:56px 0;}
+  .team-strip .wrap{grid-template-columns:1fr; gap:32px;}
+}
+@media (max-width:520px){
+  .team-strip .ts-side{flex-direction:column; align-items:flex-start; gap:24px;}
+  .team-strip .ts-stat{border-right:0; padding-right:0;}
+}
