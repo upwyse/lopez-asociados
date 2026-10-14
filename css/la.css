@@ -1477,3 +1477,8 @@ form .btn{margin-top:24px;}
 }
 .post-tag.boletin{background:var(--orange);}
 @media (max-width:760px){ .results-count{margin-left:0; width:100%;} }
+
+/* Título de Servicios: dos líneas equilibradas en escritorio */
+@media (min-width:900px){
+  .page-top h1.two-lines{max-width:none; text-wrap:balance;}
+}
