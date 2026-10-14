@@ -70,7 +70,7 @@ const initFigures = () => {
 
   let index = 0;
   let timer = null;
-  const DELAY = 4200;
+  const DELAY = 5000;
   box.style.setProperty('--delay', DELAY + 'ms');
 
   const show = (next) => {
