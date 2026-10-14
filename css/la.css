@@ -247,7 +247,7 @@ h1,h2,h3,h4{
   font-size:11px; font-weight:700; letter-spacing:.22em; color:rgba(255,255,255,.85);
 }
 
-.figures .viewport{position:relative; z-index:1; height:166px;}
+.figures .viewport{position:relative; z-index:1; height:196px;}
 .figures .fig{
   position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center;
   opacity:0; transform:translateY(24px);
@@ -257,18 +257,18 @@ h1,h2,h3,h4{
 .figures .fig.on{opacity:1; transform:translateY(0); pointer-events:auto;}
 .figures .fig.out{opacity:0; transform:translateY(-24px);}
 .figures .fig b{
-  display:block; font-family:var(--serif); font-size:clamp(44px,4.3vw,60px);
+  display:block; font-family:var(--serif); font-size:clamp(50px,4.8vw,68px);
   color:#fff; font-weight:700; line-height:1; letter-spacing:-.035em;
 }
 .figures .fig span{
-  display:block; color:rgba(255,255,255,.92); font-size:17px; font-weight:500;
-  margin-top:12px; line-height:1.45; max-width:30ch;
+  display:block; color:rgba(255,255,255,.94); font-size:20px; font-weight:500;
+  margin-top:14px; line-height:1.42; max-width:30ch;
 }
 /* Variante de frase (sin cifra): título serif grande */
 .figures .fig.txt b{
-  font-size:clamp(23px,2vw,28px); line-height:1.18; letter-spacing:-.015em; max-width:19ch;
+  font-size:clamp(26px,2.3vw,32px); line-height:1.16; letter-spacing:-.015em; max-width:19ch;
 }
-.figures .fig.txt span{font-size:16px; margin-top:12px; max-width:34ch;}
+.figures .fig.txt span{font-size:19px; margin-top:14px; max-width:34ch;}
 
 .figures .bars{position:relative; z-index:1; display:flex; gap:6px; margin-top:20px;}
 .figures .bars button{
@@ -292,12 +292,12 @@ h1,h2,h3,h4{
 @media (max-width:900px){
   .figures{position:static; width:100%; margin-top:40px;}
   .figures .card{padding:28px 26px 24px;}
-  .figures .viewport{height:160px;}
+  .figures .viewport{height:206px;}
 }
 @media (max-width:420px){
-  .figures .fig b{font-size:44px;}
-  .figures .fig.txt b{font-size:23px;}
-  .figures .fig span{font-size:15px;}
+  .figures .fig b{font-size:48px;}
+  .figures .fig.txt b{font-size:26px;}
+  .figures .fig span,.figures .fig.txt span{font-size:17px;}
 }
 
 /* Entrada del hero: un solo momento orquestado */
