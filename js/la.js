@@ -243,6 +243,7 @@ const initPeopleFilter = () => {
   const search = document.getElementById('finder');
   const chips = document.getElementById('chips');
   const chipsService = document.getElementById('chipsService');
+  const serviceSelect = document.getElementById('serviceSelect');
   const empty = document.getElementById('nomatch');
   let area = 'all';
   let service = 'all';
@@ -251,7 +252,7 @@ const initPeopleFilter = () => {
     const q = (search ? search.value : '').trim().toLowerCase();
     let shown = 0;
 
-    grid.querySelectorAll('.person').forEach((card) => {
+    grid.querySelectorAll('.person, .tm-card').forEach((card) => {
       const areas = (card.dataset.area || '').split(' ');
       const services = (card.dataset.service || '').split(' ');
       const matchArea = area === 'all' || areas.includes(area);
@@ -275,6 +276,14 @@ const initPeopleFilter = () => {
         area = btn.dataset.area;
         apply();
       });
+    });
+  }
+
+  if (serviceSelect) {
+    serviceSelect.addEventListener('change', () => {
+      service = serviceSelect.value;
+      serviceSelect.classList.toggle('active', service !== 'all');
+      apply();
     });
   }
 
